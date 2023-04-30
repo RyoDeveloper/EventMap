@@ -6,8 +6,8 @@
 //  Copyright © 2023 RyoDeveloper. All rights reserved.
 //
 
-import SwiftUI
 import FirebaseCore
+import SwiftUI
 
 class AppDelegate: NSObject, UIApplicationDelegate {
     func application(_ application: UIApplication,
@@ -20,10 +20,20 @@ class AppDelegate: NSObject, UIApplicationDelegate {
 @main
 struct EventMapApp: App {
     @UIApplicationDelegateAdaptor(AppDelegate.self) var delegate
+    @StateObject var viewModel = AuthenticationViewModel()
     
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            NavigationStack {
+                switch viewModel.authenticationState {
+                case .authenticated:
+                    ContentView()
+                        .environmentObject(viewModel)
+                default:
+                    LoginView()
+                        .environmentObject(viewModel)
+                }
+            }
         }
     }
 }
