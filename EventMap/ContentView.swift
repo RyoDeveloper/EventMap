@@ -9,21 +9,21 @@
 import SwiftUI
 
 struct ContentView: View {
-    @EnvironmentObject var viewModel: AuthenticationViewModel
-    
+    @EnvironmentObject var authentication: AuthenticationViewModel
+    @StateObject var viewModel = ContentViewModel()
+
     var body: some View {
         VStack {
-            Image(systemName: "globe")
-                .imageScale(.large)
-                .foregroundColor(.accentColor)
-            Text("Hello, world!")
-            
             Button("Sign Out") {
-                viewModel.signOut()
+                authentication.signOut()
             }
             .buttonStyle(.borderedProminent)
+
+            PostCarouselView(posts: viewModel.posts)
         }
-        .padding()
+        .task {
+            await viewModel.get()
+        }
     }
 }
 

@@ -12,6 +12,8 @@
 		2A68BBFD29FE724900898B9D /* PostComposeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A68BBFC29FE724900898B9D /* PostComposeView.swift */; };
 		2A68BBFF29FE758D00898B9D /* PostComposeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A68BBFE29FE758D00898B9D /* PostComposeViewModel.swift */; };
 		2A68BC0329FE94E500898B9D /* FirebaseFirestore in Frameworks */ = {isa = PBXBuildFile; productRef = 2A68BC0229FE94E500898B9D /* FirebaseFirestore */; };
+		2A80BBDE2A00FF38006959F7 /* ContentViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A80BBDD2A00FF38006959F7 /* ContentViewModel.swift */; };
+		2A80BBE02A0100DF006959F7 /* PostCarouselView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A80BBDF2A0100DF006959F7 /* PostCarouselView.swift */; };
 		2A8B271329FF79D1000A703C /* Post.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A8B271229FF79D1000A703C /* Post.swift */; };
 		2A8B271529FFBDD4000A703C /* FirestoreModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A8B271429FFBDD4000A703C /* FirestoreModel.swift */; };
 		2AF5046729FD554900A30D9D /* EventMapApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AF5046629FD554900A30D9D /* EventMapApp.swift */; };
@@ -30,6 +32,8 @@
 		2A68BBF929FE471500898B9D /* AuthenticationViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticationViewModel.swift; sourceTree = "<group>"; };
 		2A68BBFC29FE724900898B9D /* PostComposeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostComposeView.swift; sourceTree = "<group>"; };
 		2A68BBFE29FE758D00898B9D /* PostComposeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostComposeViewModel.swift; sourceTree = "<group>"; };
+		2A80BBDD2A00FF38006959F7 /* ContentViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentViewModel.swift; sourceTree = "<group>"; };
+		2A80BBDF2A0100DF006959F7 /* PostCarouselView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostCarouselView.swift; sourceTree = "<group>"; };
 		2A8B271229FF79D1000A703C /* Post.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Post.swift; sourceTree = "<group>"; };
 		2A8B271429FFBDD4000A703C /* FirestoreModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirestoreModel.swift; sourceTree = "<group>"; };
 		2AF5046329FD554900A30D9D /* EventMap.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = EventMap.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -78,6 +82,8 @@
 				2A3C76D329FD6C6E00912FB9 /* EventMap.entitlements */,
 				2AF5046629FD554900A30D9D /* EventMapApp.swift */,
 				2AF5046829FD554900A30D9D /* ContentView.swift */,
+				2A80BBDF2A0100DF006959F7 /* PostCarouselView.swift */,
+				2A80BBDD2A00FF38006959F7 /* ContentViewModel.swift */,
 				2A68BBF729FE46EB00898B9D /* LoginView.swift */,
 				2A68BBF929FE471500898B9D /* AuthenticationViewModel.swift */,
 				2A68BBFC29FE724900898B9D /* PostComposeView.swift */,
@@ -188,10 +194,11 @@
 			files = (
 				2A68BBFA29FE471500898B9D /* AuthenticationViewModel.swift in Sources */,
 				2A68BBF829FE46EB00898B9D /* LoginView.swift in Sources */,
+				2A80BBE02A0100DF006959F7 /* PostCarouselView.swift in Sources */,
 				2AF5046929FD554900A30D9D /* ContentView.swift in Sources */,
 				2A8B271529FFBDD4000A703C /* FirestoreModel.swift in Sources */,
 				2A68BBFD29FE724900898B9D /* PostComposeView.swift in Sources */,
-				2A80BBDC2A00A30F006959F7 /* ContentViewModel.swift in Sources */,
+				2A80BBDE2A00FF38006959F7 /* ContentViewModel.swift in Sources */,
 				2A68BBFF29FE758D00898B9D /* PostComposeViewModel.swift in Sources */,
 				2A8B271329FF79D1000A703C /* Post.swift in Sources */,
 				2AF5046729FD554900A30D9D /* EventMapApp.swift in Sources */,
