@@ -9,6 +9,11 @@
 /* Begin PBXBuildFile section */
 		2A68BBF829FE46EB00898B9D /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A68BBF729FE46EB00898B9D /* LoginView.swift */; };
 		2A68BBFA29FE471500898B9D /* AuthenticationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A68BBF929FE471500898B9D /* AuthenticationViewModel.swift */; };
+		2A68BBFD29FE724900898B9D /* PostComposeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A68BBFC29FE724900898B9D /* PostComposeView.swift */; };
+		2A68BBFF29FE758D00898B9D /* PostComposeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A68BBFE29FE758D00898B9D /* PostComposeViewModel.swift */; };
+		2A68BC0329FE94E500898B9D /* FirebaseFirestore in Frameworks */ = {isa = PBXBuildFile; productRef = 2A68BC0229FE94E500898B9D /* FirebaseFirestore */; };
+		2A8B271329FF79D1000A703C /* Post.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A8B271229FF79D1000A703C /* Post.swift */; };
+		2A8B271529FFBDD4000A703C /* FirestoreModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A8B271429FFBDD4000A703C /* FirestoreModel.swift */; };
 		2AF5046729FD554900A30D9D /* EventMapApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AF5046629FD554900A30D9D /* EventMapApp.swift */; };
 		2AF5046929FD554900A30D9D /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AF5046829FD554900A30D9D /* ContentView.swift */; };
 		2AF5046B29FD554A00A30D9D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2AF5046A29FD554A00A30D9D /* Assets.xcassets */; };
@@ -23,6 +28,10 @@
 		2A3C76D329FD6C6E00912FB9 /* EventMap.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = EventMap.entitlements; sourceTree = "<group>"; };
 		2A68BBF729FE46EB00898B9D /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
 		2A68BBF929FE471500898B9D /* AuthenticationViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticationViewModel.swift; sourceTree = "<group>"; };
+		2A68BBFC29FE724900898B9D /* PostComposeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostComposeView.swift; sourceTree = "<group>"; };
+		2A68BBFE29FE758D00898B9D /* PostComposeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostComposeViewModel.swift; sourceTree = "<group>"; };
+		2A8B271229FF79D1000A703C /* Post.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Post.swift; sourceTree = "<group>"; };
+		2A8B271429FFBDD4000A703C /* FirestoreModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirestoreModel.swift; sourceTree = "<group>"; };
 		2AF5046329FD554900A30D9D /* EventMap.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = EventMap.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2AF5046629FD554900A30D9D /* EventMapApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventMapApp.swift; sourceTree = "<group>"; };
 		2AF5046829FD554900A30D9D /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -37,6 +46,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				2AF5047A29FD63A300A30D9D /* FirebaseAnalyticsSwift in Frameworks */,
+				2A68BC0329FE94E500898B9D /* FirebaseFirestore in Frameworks */,
 				2AF5049729FD6AC200A30D9D /* FirebaseAuth in Frameworks */,
 				2AF5047829FD63A300A30D9D /* FirebaseAnalytics in Frameworks */,
 			);
@@ -70,6 +80,10 @@
 				2AF5046829FD554900A30D9D /* ContentView.swift */,
 				2A68BBF729FE46EB00898B9D /* LoginView.swift */,
 				2A68BBF929FE471500898B9D /* AuthenticationViewModel.swift */,
+				2A68BBFC29FE724900898B9D /* PostComposeView.swift */,
+				2A68BBFE29FE758D00898B9D /* PostComposeViewModel.swift */,
+				2A8B271229FF79D1000A703C /* Post.swift */,
+				2A8B271429FFBDD4000A703C /* FirestoreModel.swift */,
 				2AF5046A29FD554A00A30D9D /* Assets.xcassets */,
 				2AF5047429FD627D00A30D9D /* GoogleService-Info.plist */,
 				2AF5046C29FD554A00A30D9D /* Preview Content */,
@@ -112,6 +126,7 @@
 				2AF5047729FD63A300A30D9D /* FirebaseAnalytics */,
 				2AF5047929FD63A300A30D9D /* FirebaseAnalyticsSwift */,
 				2AF5049629FD6AC200A30D9D /* FirebaseAuth */,
+				2A68BC0229FE94E500898B9D /* FirebaseFirestore */,
 			);
 			productName = EventMap;
 			productReference = 2AF5046329FD554900A30D9D /* EventMap.app */;
@@ -174,6 +189,11 @@
 				2A68BBFA29FE471500898B9D /* AuthenticationViewModel.swift in Sources */,
 				2A68BBF829FE46EB00898B9D /* LoginView.swift in Sources */,
 				2AF5046929FD554900A30D9D /* ContentView.swift in Sources */,
+				2A8B271529FFBDD4000A703C /* FirestoreModel.swift in Sources */,
+				2A68BBFD29FE724900898B9D /* PostComposeView.swift in Sources */,
+				2A80BBDC2A00A30F006959F7 /* ContentViewModel.swift in Sources */,
+				2A68BBFF29FE758D00898B9D /* PostComposeViewModel.swift in Sources */,
+				2A8B271329FF79D1000A703C /* Post.swift in Sources */,
 				2AF5046729FD554900A30D9D /* EventMapApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -390,6 +410,11 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		2A68BC0229FE94E500898B9D /* FirebaseFirestore */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 2AF5047629FD63A300A30D9D /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseFirestore;
+		};
 		2AF5047729FD63A300A30D9D /* FirebaseAnalytics */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 2AF5047629FD63A300A30D9D /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
