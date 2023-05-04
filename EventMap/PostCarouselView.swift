@@ -11,6 +11,7 @@ import SwiftUI
 
 struct PostCarouselView: View {
     var posts: [Post]
+    @State private var viewHeight = 0.0
 
     var body: some View {
         TabView {
@@ -23,9 +24,22 @@ struct PostCarouselView: View {
                 .padding()
                 .background(.regularMaterial)
                 .padding()
+                .background {
+                    GeometryReader { geometry in
+                        Path { _ in
+                            let size = geometry.size.height
+                            DispatchQueue.main.async {
+                                if self.viewHeight != size {
+                                    self.viewHeight = size
+                                }
+                            }
+                        }
+                    }
+                }
             }
         }
         .tabViewStyle(PageTabViewStyle(indexDisplayMode: .never))
+        .frame(height: viewHeight)
     }
 }
 
