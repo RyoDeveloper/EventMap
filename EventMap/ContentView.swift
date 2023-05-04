@@ -8,27 +8,56 @@
 
 import SwiftUI
 
+enum contentPage {
+    case home
+    case account
+}
+
 struct ContentView: View {
     @EnvironmentObject var authentication: AuthenticationViewModel
-    @StateObject var viewModel = ContentViewModel()
+    @State var selection: contentPage = .home
+    @State var isShowPostComposeView = false
 
     var body: some View {
-        VStack {
-            Button("Sign Out") {
-                authentication.signOut()
+        NavigationStack {
+            TabView(selection: $selection) {
+                HomeView()
+                    .tabItem {
+                        Label("ホーム", systemImage: "house.fill")
+                    }
+                    .tag(contentPage.home)
+                NavigationStack {
+                    AccountView()
+                }
+                .tabItem {
+                    Label("アカウント", systemImage: "person.fill")
+                }
+                .tag(contentPage.account)
             }
-            .buttonStyle(.borderedProminent)
-
-            PostCarouselView(posts: viewModel.posts)
         }
-        .task {
-            await viewModel.get()
+        .toolbar(content: {
+            ToolbarItem(placement: .navigationBarTrailing) {
+                Button {
+                    isShowPostComposeView = true
+                } label: {
+                    Label("投稿", systemImage: "plus")
+                }
+            }
+        })
+        .sheet(isPresented: $isShowPostComposeView) {
+            NavigationStack {
+                PostComposeView()
+            }
         }
+        .navigationTitle(selection == .home ? "ホーム" : "アカウント")
+        .navigationBarTitleDisplayMode(.inline)
     }
 }
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
-        ContentView()
+        NavigationStack {
+            ContentView()
+        }
     }
 }
