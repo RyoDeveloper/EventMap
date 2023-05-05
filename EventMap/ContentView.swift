@@ -28,6 +28,7 @@ struct ContentView: View {
                     .tag(contentPage.home)
                 NavigationStack {
                     AccountView()
+                        .environmentObject(authentication)
                 }
                 .tabItem {
                     Label("アカウント", systemImage: "person.fill")

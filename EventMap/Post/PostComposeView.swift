@@ -40,7 +40,7 @@ struct PostComposeView: View {
     }
 }
 
-struct PostView_Previews: PreviewProvider {
+struct PostComposeView_Previews: PreviewProvider {
     static var previews: some View {
         NavigationStack {
             PostComposeView()

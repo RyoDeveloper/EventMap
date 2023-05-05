@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		2A2649372A01E4FC00B3FECA /* LocationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A2649362A01E4FC00B3FECA /* LocationManager.swift */; };
+		2A496A882A04D6FE00075840 /* MyPostView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A496A872A04D6FE00075840 /* MyPostView.swift */; };
+		2A496A8A2A04DD7A00075840 /* MyPostViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A496A892A04DD7A00075840 /* MyPostViewModel.swift */; };
 		2A5100282A0399D4009F6D19 /* AccountView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A5100272A0399D4009F6D19 /* AccountView.swift */; };
 		2A68BBF829FE46EB00898B9D /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A68BBF729FE46EB00898B9D /* LoginView.swift */; };
 		2A68BBFA29FE471500898B9D /* AuthenticationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A68BBF929FE471500898B9D /* AuthenticationViewModel.swift */; };
@@ -23,6 +25,7 @@
 		2AF38E862A039F30001F62C5 /* SettingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AF38E852A039F30001F62C5 /* SettingView.swift */; };
 		2AF38E882A03D419001F62C5 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AF38E872A03D419001F62C5 /* HomeView.swift */; };
 		2AF38E8A2A040895001F62C5 /* IdentifiablePlace.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AF38E892A040895001F62C5 /* IdentifiablePlace.swift */; };
+		2AF38E912A04C935001F62C5 /* PostView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AF38E902A04C935001F62C5 /* PostView.swift */; };
 		2AF5046729FD554900A30D9D /* EventMapApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AF5046629FD554900A30D9D /* EventMapApp.swift */; };
 		2AF5046929FD554900A30D9D /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AF5046829FD554900A30D9D /* ContentView.swift */; };
 		2AF5046B29FD554A00A30D9D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2AF5046A29FD554A00A30D9D /* Assets.xcassets */; };
@@ -36,6 +39,8 @@
 /* Begin PBXFileReference section */
 		2A2649362A01E4FC00B3FECA /* LocationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationManager.swift; sourceTree = "<group>"; };
 		2A3C76D329FD6C6E00912FB9 /* EventMap.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = EventMap.entitlements; sourceTree = "<group>"; };
+		2A496A872A04D6FE00075840 /* MyPostView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyPostView.swift; sourceTree = "<group>"; };
+		2A496A892A04DD7A00075840 /* MyPostViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyPostViewModel.swift; sourceTree = "<group>"; };
 		2A5100272A0399D4009F6D19 /* AccountView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountView.swift; sourceTree = "<group>"; };
 		2A68BBF729FE46EB00898B9D /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
 		2A68BBF929FE471500898B9D /* AuthenticationViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticationViewModel.swift; sourceTree = "<group>"; };
@@ -50,6 +55,7 @@
 		2AF38E852A039F30001F62C5 /* SettingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingView.swift; sourceTree = "<group>"; };
 		2AF38E872A03D419001F62C5 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 		2AF38E892A040895001F62C5 /* IdentifiablePlace.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IdentifiablePlace.swift; sourceTree = "<group>"; };
+		2AF38E902A04C935001F62C5 /* PostView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostView.swift; sourceTree = "<group>"; };
 		2AF5046329FD554900A30D9D /* EventMap.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = EventMap.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2AF5046629FD554900A30D9D /* EventMapApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventMapApp.swift; sourceTree = "<group>"; };
 		2AF5046829FD554900A30D9D /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -86,6 +92,8 @@
 			isa = PBXGroup;
 			children = (
 				2A5100272A0399D4009F6D19 /* AccountView.swift */,
+				2A496A872A04D6FE00075840 /* MyPostView.swift */,
+				2A496A892A04DD7A00075840 /* MyPostViewModel.swift */,
 				2AF38E852A039F30001F62C5 /* SettingView.swift */,
 				2A68BBF729FE46EB00898B9D /* LoginView.swift */,
 			);
@@ -109,6 +117,7 @@
 				2A68BBFE29FE758D00898B9D /* PostComposeViewModel.swift */,
 				2A80BBDF2A0100DF006959F7 /* PostCarouselView.swift */,
 				2A8B271229FF79D1000A703C /* Post.swift */,
+				2AF38E902A04C935001F62C5 /* PostView.swift */,
 			);
 			path = Post;
 			sourceTree = "<group>";
@@ -255,6 +264,7 @@
 			files = (
 				2A68BBFA29FE471500898B9D /* AuthenticationViewModel.swift in Sources */,
 				2A68BBF829FE46EB00898B9D /* LoginView.swift in Sources */,
+				2A496A882A04D6FE00075840 /* MyPostView.swift in Sources */,
 				2A80BBE02A0100DF006959F7 /* PostCarouselView.swift in Sources */,
 				2A2649372A01E4FC00B3FECA /* LocationManager.swift in Sources */,
 				2A5100282A0399D4009F6D19 /* AccountView.swift in Sources */,
@@ -268,7 +278,9 @@
 				2A8B271329FF79D1000A703C /* Post.swift in Sources */,
 				2AF38E882A03D419001F62C5 /* HomeView.swift in Sources */,
 				2AF38E8A2A040895001F62C5 /* IdentifiablePlace.swift in Sources */,
+				2A496A8A2A04DD7A00075840 /* MyPostViewModel.swift in Sources */,
 				2AF5046729FD554900A30D9D /* EventMapApp.swift in Sources */,
+				2AF38E912A04C935001F62C5 /* PostView.swift in Sources */,
 				2A83FE812A022A9300F583BA /* MapViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

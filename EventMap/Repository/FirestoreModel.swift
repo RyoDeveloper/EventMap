@@ -41,4 +41,23 @@ class FirestoreModel {
         }
         return posts
     }
+
+    /// 自分の投稿を取得
+    func getMyPost(user_id: String) async -> [Post] {
+        var posts: [Post] = []
+        do {
+            let querySnapshot = try await Firestore.firestore().collection("posts")
+                .whereField("user_id", isEqualTo: user_id).getDocuments()
+            for document in querySnapshot.documents {
+                let data = document.data()
+                let post = Post(user_id: data["user_id"] as? String ?? "",
+                                title: data["title"] as? String ?? "",
+                                geopoint: data["geopoint"] as? GeoPoint ?? GeoPoint(latitude: 0.0, longitude: 0.0))
+                posts.append(post)
+            }
+        } catch {
+            print("error")
+        }
+        return posts
+    }
 }

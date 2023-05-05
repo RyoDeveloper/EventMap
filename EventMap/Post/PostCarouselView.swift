@@ -17,11 +17,8 @@ struct PostCarouselView: View {
         TabView {
             ForEach(posts, id: \.self) { post in
                 VStack(alignment: .leading) {
-                    Text(post.title)
-                    Text("\(post.geopoint.latitude.description)N, \(post.geopoint.longitude.description)E")
-                        .frame(maxWidth: .infinity, alignment: .leading)
+                    PostView(post: post)
                 }
-                .padding()
                 .background(.regularMaterial)
                 .padding()
                 .background {

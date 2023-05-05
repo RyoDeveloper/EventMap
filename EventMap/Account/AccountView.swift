@@ -14,10 +14,16 @@ enum accountPage {
 }
 
 struct AccountView: View {
+    @EnvironmentObject var authentication: AuthenticationViewModel
     @State var selection: accountPage = .post
 
     var body: some View {
         VStack {
+            Label(authentication.user?.uid ?? "ID無し",
+                  systemImage: (authentication.user?.uid != nil) ? "apple.logo" : "person.crop.circle.badge.xmark.fill")
+                .textSelection(.enabled)
+                .frame(maxWidth: .infinity, alignment: .leading)
+
             Picker("", selection: $selection, content: {
                 Text("投稿")
                     .tag(accountPage.post)
@@ -25,22 +31,22 @@ struct AccountView: View {
                     .tag(accountPage.setting)
             })
             .pickerStyle(.segmented)
-            .padding()
+            Divider()
 
             switch selection {
             case .post:
-                ScrollView {
-                    Text("投稿")
-                }
+                MyPostView()
             case .setting:
                 SettingView()
             }
         }
+        .padding()
     }
 }
 
 struct AccountView_Previews: PreviewProvider {
     static var previews: some View {
         AccountView()
+            .environmentObject(AuthenticationViewModel())
     }
 }
