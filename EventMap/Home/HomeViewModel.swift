@@ -1,5 +1,5 @@
 //
-//  ContentViewModel.swift
+//  HomeViewModel.swift
 //  EventMap
 //
 //  https://github.com/RyoDeveloper/EventMap
@@ -8,7 +8,7 @@
 
 import Foundation
 
-class ContentViewModel: ObservableObject {
+class HomeViewModel: ObservableObject {
     var firestoreModel = FirestoreModel()
     @Published var posts: [Post] = []
 
