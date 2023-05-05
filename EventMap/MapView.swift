@@ -11,6 +11,7 @@ import SwiftUI
 
 struct MapView: View {
     @StateObject var viewModel = MapViewModel()
+    @Binding var posts: [Post]
 
     var body: some View {
         VStack {
@@ -19,19 +20,26 @@ struct MapView: View {
                 latitudinalMeters: 50,
                 longitudinalMeters: 50)),
             interactionModes: [],
-            showsUserLocation: true)
+            showsUserLocation: true,
+            annotationItems: viewModel.places) { place in
+                MapMarker(coordinate: place.location)
+            }
         }
         .onAppear {
             viewModel.activate()
+            viewModel.changeIdentifiablePlace(posts: posts)
         }
         .onDisappear {
             viewModel.cancellables.removeAll()
+        }
+        .onChange(of: posts) { newValue in
+            viewModel.changeIdentifiablePlace(posts: newValue)
         }
     }
 }
 
 struct MapView_Previews: PreviewProvider {
     static var previews: some View {
-        MapView()
+        MapView(posts: .constant([]))
     }
 }

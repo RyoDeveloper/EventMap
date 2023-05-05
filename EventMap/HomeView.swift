@@ -13,7 +13,7 @@ struct HomeView: View {
 
     var body: some View {
         ZStack {
-            MapView()
+            MapView(posts: $viewModel.posts)
             VStack {
                 Spacer()
                 PostCarouselView(posts: viewModel.posts)
