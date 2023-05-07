@@ -14,6 +14,6 @@ class MyPostViewModel: ObservableObject {
 
     @MainActor
     func getMyPost(user_id: String) async {
-        myPost = await model.getMyPost(user_id: user_id)
+        myPost = await model.get(user_id: user_id)
     }
 }

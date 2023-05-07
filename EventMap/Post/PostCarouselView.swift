@@ -16,23 +16,23 @@ struct PostCarouselView: View {
     var body: some View {
         TabView {
             ForEach(posts, id: \.self) { post in
-                VStack(alignment: .leading) {
-                    PostView(post: post)
-                }
-                .background(.regularMaterial)
-                .padding()
-                .background {
-                    GeometryReader { geometry in
-                        Path { _ in
-                            let size = geometry.size.height
-                            DispatchQueue.main.async {
-                                if self.viewHeight != size {
-                                    self.viewHeight = size
+                PostView(post: post)
+                    .background(.regularMaterial)
+                    .cornerRadius(10)
+                    .padding()
+                    .shadow(radius: 5)
+                    .background {
+                        GeometryReader { geometry in
+                            Path { _ in
+                                let size = geometry.size.height
+                                DispatchQueue.main.async {
+                                    if self.viewHeight != size {
+                                        self.viewHeight = size
+                                    }
                                 }
                             }
                         }
                     }
-                }
             }
         }
         .tabViewStyle(PageTabViewStyle(indexDisplayMode: .never))

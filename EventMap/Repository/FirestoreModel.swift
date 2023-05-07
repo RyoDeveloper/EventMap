@@ -38,7 +38,7 @@ class FirestoreModel {
                 let data = document.data()
                 let post = Post(user_id: data["user_id"] as? String ?? "",
                                 title: data["title"] as? String ?? "",
-                                image_url: data["image_url"] as? URL ?? URL(string: "NoImage")!,
+                                image_url: URL(string: data["image_url"] as! String) ?? URL(string: "NoImage")!,
                                 geopoint: data["geopoint"] as? GeoPoint ?? GeoPoint(latitude: 0.0, longitude: 0.0))
                 posts.append(post)
             }
@@ -49,7 +49,7 @@ class FirestoreModel {
     }
     
     /// 自分の投稿を取得
-    func getMyPost(user_id: String) async -> [Post] {
+    func get(user_id: String) async -> [Post] {
         var posts: [Post] = []
         do {
             let querySnapshot = try await Firestore.firestore().collection("posts")
@@ -58,7 +58,7 @@ class FirestoreModel {
                 let data = document.data()
                 let post = Post(user_id: data["user_id"] as? String ?? "",
                                 title: data["title"] as? String ?? "",
-                                image_url: data["image_url"] as? URL ?? URL(string: "NoImage")!,
+                                image_url: URL(string: data["image_url"] as! String) ?? URL(string: "NoImage")!,
                                 geopoint: data["geopoint"] as? GeoPoint ?? GeoPoint(latitude: 0.0, longitude: 0.0))
                 posts.append(post)
             }

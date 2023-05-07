@@ -19,20 +19,22 @@ struct AccountView: View {
 
     var body: some View {
         VStack {
-            Label(authentication.user?.uid ?? "ID無し",
-                  systemImage: (authentication.user?.uid != nil) ? "apple.logo" : "person.crop.circle.badge.xmark.fill")
-                .textSelection(.enabled)
-                .frame(maxWidth: .infinity, alignment: .leading)
+            VStack {
+                Label(authentication.user?.uid ?? "ID無し",
+                      systemImage: (authentication.user?.uid != nil) ? "apple.logo" : "person.crop.circle.badge.xmark.fill")
+                    .textSelection(.enabled)
+                    .frame(maxWidth: .infinity, alignment: .leading)
 
-            Picker("", selection: $selection, content: {
-                Text("投稿")
-                    .tag(accountPage.post)
-                Text("設定")
-                    .tag(accountPage.setting)
-            })
-            .pickerStyle(.segmented)
+                Picker("", selection: $selection, content: {
+                    Text("投稿")
+                        .tag(accountPage.post)
+                    Text("設定")
+                        .tag(accountPage.setting)
+                })
+                .pickerStyle(.segmented)
+            }
+            .padding([.top, .leading, .trailing])
             Divider()
-
             switch selection {
             case .post:
                 MyPostView()
@@ -40,7 +42,6 @@ struct AccountView: View {
                 SettingView()
             }
         }
-        .padding()
     }
 }
 

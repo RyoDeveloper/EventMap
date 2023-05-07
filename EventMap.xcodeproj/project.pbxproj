@@ -13,6 +13,7 @@
 		2A496A8C2A05E58E00075840 /* FirebaseStorage in Frameworks */ = {isa = PBXBuildFile; productRef = 2A496A8B2A05E58E00075840 /* FirebaseStorage */; };
 		2A496A8E2A0638F100075840 /* UIImagePickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A496A8D2A0638F100075840 /* UIImagePickerView.swift */; };
 		2A5100282A0399D4009F6D19 /* AccountView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A5100272A0399D4009F6D19 /* AccountView.swift */; };
+		2A5CFE022A078EFC006BB7A5 /* PostViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A5CFE012A078EFC006BB7A5 /* PostViewModel.swift */; };
 		2A68BBF829FE46EB00898B9D /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A68BBF729FE46EB00898B9D /* LoginView.swift */; };
 		2A68BBFA29FE471500898B9D /* AuthenticationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A68BBF929FE471500898B9D /* AuthenticationViewModel.swift */; };
 		2A68BBFD29FE724900898B9D /* PostComposeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A68BBFC29FE724900898B9D /* PostComposeView.swift */; };
@@ -45,6 +46,7 @@
 		2A496A892A04DD7A00075840 /* MyPostViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyPostViewModel.swift; sourceTree = "<group>"; };
 		2A496A8D2A0638F100075840 /* UIImagePickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIImagePickerView.swift; sourceTree = "<group>"; };
 		2A5100272A0399D4009F6D19 /* AccountView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountView.swift; sourceTree = "<group>"; };
+		2A5CFE012A078EFC006BB7A5 /* PostViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostViewModel.swift; sourceTree = "<group>"; };
 		2A68BBF729FE46EB00898B9D /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
 		2A68BBF929FE471500898B9D /* AuthenticationViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticationViewModel.swift; sourceTree = "<group>"; };
 		2A68BBFC29FE724900898B9D /* PostComposeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostComposeView.swift; sourceTree = "<group>"; };
@@ -122,6 +124,7 @@
 				2A80BBDF2A0100DF006959F7 /* PostCarouselView.swift */,
 				2A8B271229FF79D1000A703C /* Post.swift */,
 				2AF38E902A04C935001F62C5 /* PostView.swift */,
+				2A5CFE012A078EFC006BB7A5 /* PostViewModel.swift */,
 				2A496A8D2A0638F100075840 /* UIImagePickerView.swift */,
 			);
 			path = Post;
@@ -286,6 +289,7 @@
 				2AF38E882A03D419001F62C5 /* HomeView.swift in Sources */,
 				2AF38E8A2A040895001F62C5 /* IdentifiablePlace.swift in Sources */,
 				2A496A8A2A04DD7A00075840 /* MyPostViewModel.swift in Sources */,
+				2A5CFE022A078EFC006BB7A5 /* PostViewModel.swift in Sources */,
 				2AF5046729FD554900A30D9D /* EventMapApp.swift in Sources */,
 				2AF38E912A04C935001F62C5 /* PostView.swift in Sources */,
 				2A83FE812A022A9300F583BA /* MapViewModel.swift in Sources */,
