@@ -6,12 +6,13 @@
 //  Copyright © 2023 RyoDeveloper. All rights reserved.
 //
 
-import Firebase
+import FirebaseFirestore
 import Foundation
 
 struct Post: Hashable {
     var document_id = UUID().uuidString
     var user_id: String
     var title: String
+    var image_url: URL
     var geopoint: GeoPoint
 }

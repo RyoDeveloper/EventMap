@@ -6,10 +6,14 @@
 //  Copyright © 2023 RyoDeveloper. All rights reserved.
 //
 
-import Firebase
+import FirebaseFirestore
+import FirebaseStorage
 import Foundation
+import UIKit
 
 class FirestoreModel {
+    // MARK: Firestore
+    
     /// 投稿
     func post(post: Post) async {
         let db = Firestore.firestore()
@@ -17,13 +21,14 @@ class FirestoreModel {
             try await db.collection("posts").document(post.document_id).setData([
                 "user_id": post.user_id,
                 "title": post.title,
+                "image_url": post.image_url.absoluteString,
                 "geopoint": post.geopoint
             ])
         } catch {
             print(error)
         }
     }
-
+    
     /// 取得
     func get() async -> [Post] {
         var posts: [Post] = []
@@ -33,6 +38,7 @@ class FirestoreModel {
                 let data = document.data()
                 let post = Post(user_id: data["user_id"] as? String ?? "",
                                 title: data["title"] as? String ?? "",
+                                image_url: data["image_url"] as? URL ?? URL(string: "NoImage")!,
                                 geopoint: data["geopoint"] as? GeoPoint ?? GeoPoint(latitude: 0.0, longitude: 0.0))
                 posts.append(post)
             }
@@ -41,7 +47,7 @@ class FirestoreModel {
         }
         return posts
     }
-
+    
     /// 自分の投稿を取得
     func getMyPost(user_id: String) async -> [Post] {
         var posts: [Post] = []
@@ -52,6 +58,7 @@ class FirestoreModel {
                 let data = document.data()
                 let post = Post(user_id: data["user_id"] as? String ?? "",
                                 title: data["title"] as? String ?? "",
+                                image_url: data["image_url"] as? URL ?? URL(string: "NoImage")!,
                                 geopoint: data["geopoint"] as? GeoPoint ?? GeoPoint(latitude: 0.0, longitude: 0.0))
                 posts.append(post)
             }
@@ -59,5 +66,38 @@ class FirestoreModel {
             print("error")
         }
         return posts
+    }
+    
+    // MARK: Firestorage
+    
+    /// 画像をアップロード
+    func uploadImage(image: UIImage) -> URL {
+        let storage = Storage.storage()
+        let storageRef = storage.reference()
+        // 画像の情報
+        let imageRef = storageRef.child("post/\(UUID().uuidString).jpg")
+        let data = image.jpegData(compressionQuality: 0.5)!
+        // タイプを画像に指定
+        let metadata = StorageMetadata()
+        metadata.contentType = "image/jpeg"
+        
+        var returnURL = URL(string: "NoImage")!
+        let semaphore = DispatchSemaphore(value: 0)
+        
+        // 画像をアップロード
+        let uploadTask = imageRef.putData(data, metadata: metadata)
+        // 画像のURLを取得
+        uploadTask.observe(.success) { _ in
+            imageRef.downloadURL { url, error in
+                if let url {
+                    returnURL = url
+                } else if let error {
+                    print(error)
+                }
+                semaphore.signal()
+            }
+        }
+        semaphore.wait()
+        return returnURL
     }
 }

@@ -10,6 +10,8 @@
 		2A2649372A01E4FC00B3FECA /* LocationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A2649362A01E4FC00B3FECA /* LocationManager.swift */; };
 		2A496A882A04D6FE00075840 /* MyPostView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A496A872A04D6FE00075840 /* MyPostView.swift */; };
 		2A496A8A2A04DD7A00075840 /* MyPostViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A496A892A04DD7A00075840 /* MyPostViewModel.swift */; };
+		2A496A8C2A05E58E00075840 /* FirebaseStorage in Frameworks */ = {isa = PBXBuildFile; productRef = 2A496A8B2A05E58E00075840 /* FirebaseStorage */; };
+		2A496A8E2A0638F100075840 /* UIImagePickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A496A8D2A0638F100075840 /* UIImagePickerView.swift */; };
 		2A5100282A0399D4009F6D19 /* AccountView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A5100272A0399D4009F6D19 /* AccountView.swift */; };
 		2A68BBF829FE46EB00898B9D /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A68BBF729FE46EB00898B9D /* LoginView.swift */; };
 		2A68BBFA29FE471500898B9D /* AuthenticationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A68BBF929FE471500898B9D /* AuthenticationViewModel.swift */; };
@@ -41,6 +43,7 @@
 		2A3C76D329FD6C6E00912FB9 /* EventMap.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = EventMap.entitlements; sourceTree = "<group>"; };
 		2A496A872A04D6FE00075840 /* MyPostView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyPostView.swift; sourceTree = "<group>"; };
 		2A496A892A04DD7A00075840 /* MyPostViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyPostViewModel.swift; sourceTree = "<group>"; };
+		2A496A8D2A0638F100075840 /* UIImagePickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIImagePickerView.swift; sourceTree = "<group>"; };
 		2A5100272A0399D4009F6D19 /* AccountView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountView.swift; sourceTree = "<group>"; };
 		2A68BBF729FE46EB00898B9D /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
 		2A68BBF929FE471500898B9D /* AuthenticationViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticationViewModel.swift; sourceTree = "<group>"; };
@@ -72,6 +75,7 @@
 				2AF5047A29FD63A300A30D9D /* FirebaseAnalyticsSwift in Frameworks */,
 				2A68BC0329FE94E500898B9D /* FirebaseFirestore in Frameworks */,
 				2AF5049729FD6AC200A30D9D /* FirebaseAuth in Frameworks */,
+				2A496A8C2A05E58E00075840 /* FirebaseStorage in Frameworks */,
 				2AF5047829FD63A300A30D9D /* FirebaseAnalytics in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -118,6 +122,7 @@
 				2A80BBDF2A0100DF006959F7 /* PostCarouselView.swift */,
 				2A8B271229FF79D1000A703C /* Post.swift */,
 				2AF38E902A04C935001F62C5 /* PostView.swift */,
+				2A496A8D2A0638F100075840 /* UIImagePickerView.swift */,
 			);
 			path = Post;
 			sourceTree = "<group>";
@@ -203,6 +208,7 @@
 				2AF5047929FD63A300A30D9D /* FirebaseAnalyticsSwift */,
 				2AF5049629FD6AC200A30D9D /* FirebaseAuth */,
 				2A68BC0229FE94E500898B9D /* FirebaseFirestore */,
+				2A496A8B2A05E58E00075840 /* FirebaseStorage */,
 			);
 			productName = EventMap;
 			productReference = 2AF5046329FD554900A30D9D /* EventMap.app */;
@@ -265,6 +271,7 @@
 				2A68BBFA29FE471500898B9D /* AuthenticationViewModel.swift in Sources */,
 				2A68BBF829FE46EB00898B9D /* LoginView.swift in Sources */,
 				2A496A882A04D6FE00075840 /* MyPostView.swift in Sources */,
+				2A496A8E2A0638F100075840 /* UIImagePickerView.swift in Sources */,
 				2A80BBE02A0100DF006959F7 /* PostCarouselView.swift in Sources */,
 				2A2649372A01E4FC00B3FECA /* LocationManager.swift in Sources */,
 				2A5100282A0399D4009F6D19 /* AccountView.swift in Sources */,
@@ -415,6 +422,7 @@
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_LSApplicationCategoryType = "Privacy - Location When In Use Usage Description";
+				INFOPLIST_KEY_NSCameraUsageDescription = "カメラは、写真撮影に使用されます。";
 				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "位置情報は、地図上での位置の表示に使用されます。";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -447,6 +455,7 @@
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_LSApplicationCategoryType = "Privacy - Location When In Use Usage Description";
+				INFOPLIST_KEY_NSCameraUsageDescription = "カメラは、写真撮影に使用されます。";
 				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "位置情報は、地図上での位置の表示に使用されます。";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -501,6 +510,11 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		2A496A8B2A05E58E00075840 /* FirebaseStorage */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 2AF5047629FD63A300A30D9D /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseStorage;
+		};
 		2A68BC0229FE94E500898B9D /* FirebaseFirestore */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 2AF5047629FD63A300A30D9D /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;

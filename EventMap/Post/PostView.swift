@@ -6,7 +6,7 @@
 //  Copyright © 2023 RyoDeveloper. All rights reserved.
 //
 
-import Firebase
+import FirebaseFirestore
 import SwiftUI
 
 struct PostView: View {
@@ -24,6 +24,6 @@ struct PostView: View {
 
 struct PostView_Previews: PreviewProvider {
     static var previews: some View {
-        PostView(post: Post(user_id: "1", title: "Title1", geopoint: GeoPoint(latitude: 0.0, longitude: 0.0)))
+        PostView(post: Post(user_id: "1", title: "Title1", image_url: URL(string: "NoImage")!, geopoint: GeoPoint(latitude: 0.0, longitude: 0.0)))
     }
 }
