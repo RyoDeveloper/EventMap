@@ -6,11 +6,13 @@
 //  Copyright © 2023 RyoDeveloper. All rights reserved.
 //
 
+import CoreLocation
 import FirebaseFirestore
 import SwiftUI
 
 struct PostView: View {
     var viewModel = PostViewModel()
+    var locationManager = LocationManager()
     let post: Post
 
     var body: some View {
@@ -29,8 +31,10 @@ struct PostView: View {
             VStack(alignment: .leading) {
                 Text(post.title)
                     .font(.headline)
-
-                Text("\(post.geopoint.latitude.description)N, \(post.geopoint.longitude.description)E")
+                
+                Spacer()
+                
+                Text(String(format: "%.1f", post.distance(from: locationManager.currentLocation?.coordinate ?? CLLocationCoordinate2D(latitude: 0.0, longitude: 0.0))) + "m")
                 
                 Spacer()
                 
