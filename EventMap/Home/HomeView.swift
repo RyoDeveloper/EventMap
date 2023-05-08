@@ -10,13 +10,14 @@ import SwiftUI
 
 struct HomeView: View {
     @StateObject var viewModel = HomeViewModel()
+    @State var selectedPost = ""
 
     var body: some View {
         ZStack {
-            MapView(posts: $viewModel.posts)
+            MapView(posts: $viewModel.posts, selectedPost: $selectedPost)
             VStack {
                 Spacer()
-                PostCarouselView(posts: viewModel.posts)
+                PostCarouselView(posts: viewModel.posts, selectedPost: $selectedPost)
                     .padding(.bottom)
             }
         }

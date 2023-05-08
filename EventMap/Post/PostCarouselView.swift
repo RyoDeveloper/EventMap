@@ -12,9 +12,10 @@ import SwiftUI
 struct PostCarouselView: View {
     var posts: [Post]
     @State private var viewHeight = 0.0
+    @Binding var selectedPost: String
 
     var body: some View {
-        TabView {
+        TabView(selection: $selectedPost) {
             ForEach(posts, id: \.self) { post in
                 PostView(post: post)
                     .background(.regularMaterial)
@@ -33,8 +34,10 @@ struct PostCarouselView: View {
                             }
                         }
                     }
+                    .tag(post.document_id)
             }
         }
+        .animation(.default, value: selectedPost)
         .tabViewStyle(PageTabViewStyle(indexDisplayMode: .never))
         .frame(height: viewHeight)
     }
@@ -42,6 +45,6 @@ struct PostCarouselView: View {
 
 struct PostCarouselView_Previews: PreviewProvider {
     static var previews: some View {
-        PostCarouselView(posts: [Post(user_id: "1", title: "Title1", image_url: URL(string: "NoImage")!, geopoint: GeoPoint(latitude: 0.0, longitude: 0.0), created_at: Timestamp(date: Date())), Post(user_id: "2", title: "Title2", image_url: URL(string: "NoImage")!, geopoint: GeoPoint(latitude: 0.0, longitude: 0.0), created_at: Timestamp(date: Date()))])
+        PostCarouselView(posts: [Post(user_id: "1", title: "Title1", image_url: URL(string: "NoImage")!, geopoint: GeoPoint(latitude: 0.0, longitude: 0.0), created_at: Timestamp(date: Date())), Post(user_id: "2", title: "Title2", image_url: URL(string: "NoImage")!, geopoint: GeoPoint(latitude: 0.0, longitude: 0.0), created_at: Timestamp(date: Date()))], selectedPost: .constant(""))
     }
 }
