@@ -15,4 +15,5 @@ struct Post: Hashable {
     var title: String
     var image_url: URL
     var geopoint: GeoPoint
+    var created_at: Timestamp
 }

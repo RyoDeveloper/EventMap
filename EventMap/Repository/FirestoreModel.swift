@@ -22,7 +22,8 @@ class FirestoreModel {
                 "user_id": post.user_id,
                 "title": post.title,
                 "image_url": post.image_url.absoluteString,
-                "geopoint": post.geopoint
+                "geopoint": post.geopoint,
+                "created_at": post.created_at
             ])
         } catch {
             print(error)
@@ -39,7 +40,8 @@ class FirestoreModel {
                 let post = Post(user_id: data["user_id"] as? String ?? "",
                                 title: data["title"] as? String ?? "",
                                 image_url: URL(string: data["image_url"] as! String) ?? URL(string: "NoImage")!,
-                                geopoint: data["geopoint"] as? GeoPoint ?? GeoPoint(latitude: 0.0, longitude: 0.0))
+                                geopoint: data["geopoint"] as? GeoPoint ?? GeoPoint(latitude: 0.0, longitude: 0.0),
+                                created_at: Timestamp(date: Date()))
                 posts.append(post)
             }
         } catch {
@@ -59,7 +61,8 @@ class FirestoreModel {
                 let post = Post(user_id: data["user_id"] as? String ?? "",
                                 title: data["title"] as? String ?? "",
                                 image_url: URL(string: data["image_url"] as! String) ?? URL(string: "NoImage")!,
-                                geopoint: data["geopoint"] as? GeoPoint ?? GeoPoint(latitude: 0.0, longitude: 0.0))
+                                geopoint: data["geopoint"] as? GeoPoint ?? GeoPoint(latitude: 0.0, longitude: 0.0),
+                                created_at: data["created_at"] as? Timestamp ?? Timestamp(date: Date()))
                 posts.append(post)
             }
         } catch {
