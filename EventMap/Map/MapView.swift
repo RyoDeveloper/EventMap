@@ -21,19 +21,15 @@ struct MapView: View {
                 longitudinalMeters: 50)),
             interactionModes: [],
             showsUserLocation: true,
-            annotationItems: viewModel.places) { place in
-                MapMarker(coordinate: place.location)
+            annotationItems: posts) { post in
+                MapMarker(coordinate: post.getCLLocationCoordinate2D(), tint: post.getHourColor())
             }
         }
         .onAppear {
             viewModel.activate()
-            viewModel.changeIdentifiablePlace(posts: posts)
         }
         .onDisappear {
             viewModel.cancellables.removeAll()
-        }
-        .onChange(of: posts) { newValue in
-            viewModel.changeIdentifiablePlace(posts: newValue)
         }
     }
 }

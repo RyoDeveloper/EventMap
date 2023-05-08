@@ -9,14 +9,23 @@
 import FirebaseFirestore
 import Foundation
 import SwiftUI
+import CoreLocation
 
-struct Post: Hashable {
+struct Post: Hashable, Identifiable {
+    // mapのannotationに表示するために必要(document_idと統合させることも検討)
+    var id = UUID()
+
     var document_id = UUID().uuidString
     var user_id: String
     var title: String
     var image_url: URL
     var geopoint: GeoPoint
     var created_at: Timestamp
+    
+    /// GeoPointをCLLocationCoordinate2Dに変換して返す
+    func getCLLocationCoordinate2D() -> CLLocationCoordinate2D {
+        return CLLocationCoordinate2D(latitude: geopoint.latitude, longitude: geopoint.longitude)
+    }
 
     /// 経過時間を返す
     func getHour() -> Double {
