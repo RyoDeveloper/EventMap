@@ -20,6 +20,7 @@ struct PostComposeView: View {
     var body: some View {
         List {
             TextField("タイトル", text: $viewModel.title)
+                .submitLabel(.done)
 
             if let image = viewModel.image {
                 VStack {
