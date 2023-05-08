@@ -31,8 +31,14 @@ struct PostView: View {
                     .font(.headline)
 
                 Text("\(post.geopoint.latitude.description)N, \(post.geopoint.longitude.description)E")
+                
                 Spacer()
-
+                
+                Text(String(format: "%.1f", post.getHour()) + "時間前")
+                    .font(.caption)
+                
+                Spacer()
+                
                 Button("Mapを開く") {
                     let application = UIApplication.shared
                     let url = viewModel.getMapURL(geopoint: post.geopoint, title: post.title)
@@ -44,6 +50,9 @@ struct PostView: View {
         }
         .frame(maxWidth: .infinity, maxHeight: UIScreen.main.bounds.height / 7, alignment: .leading)
         .padding()
+        .background {
+            LinearGradient(colors: [post.getHourColor(), .clear, .clear, .clear], startPoint: .leading, endPoint: .trailing)
+        }
     }
 }
 

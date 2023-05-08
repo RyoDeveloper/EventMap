@@ -41,7 +41,7 @@ class FirestoreModel {
                                 title: data["title"] as? String ?? "",
                                 image_url: URL(string: data["image_url"] as! String) ?? URL(string: "NoImage")!,
                                 geopoint: data["geopoint"] as? GeoPoint ?? GeoPoint(latitude: 0.0, longitude: 0.0),
-                                created_at: Timestamp(date: Date()))
+                                created_at: data["created_at"] as? Timestamp ?? Timestamp(date: Date()))
                 posts.append(post)
             }
         } catch {

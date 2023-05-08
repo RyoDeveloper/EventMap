@@ -17,6 +17,7 @@ struct MyPostView: View {
         List {
             ForEach(viewModel.myPost, id: \.self) { post in
                 PostView(post: post)
+                    .cornerRadius(10)
             }
         }
         .listStyle(.plain)
