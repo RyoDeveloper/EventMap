@@ -18,8 +18,8 @@ struct MapView: View {
         VStack {
             Map(coordinateRegion: .constant(MKCoordinateRegion(
                 center: viewModel.location,
-                latitudinalMeters: 50,
-                longitudinalMeters: 50)),
+                latitudinalMeters: 170,
+                longitudinalMeters: 170)),
             interactionModes: [],
             showsUserLocation: true,
             annotationItems: posts) { post in

@@ -6,6 +6,7 @@
 //  Copyright © 2023 RyoDeveloper. All rights reserved.
 //
 
+import CoreLocation
 import FirebaseFirestore
 import FirebaseStorage
 import Foundation
@@ -31,7 +32,7 @@ class FirestoreModel {
     }
     
     /// 取得
-    func get() async -> [Post] {
+    func get(from: CLLocationCoordinate2D) async -> [Post] {
         var posts: [Post] = []
         do {
             let querySnapshot = try await Firestore.firestore().collection("posts").getDocuments()
@@ -42,7 +43,9 @@ class FirestoreModel {
                                 image_url: URL(string: data["image_url"] as! String) ?? URL(string: "NoImage")!,
                                 geopoint: data["geopoint"] as? GeoPoint ?? GeoPoint(latitude: 0.0, longitude: 0.0),
                                 created_at: data["created_at"] as? Timestamp ?? Timestamp(date: Date()))
-                posts.append(post)
+                if post.distance(from: from) < 160 {
+                    posts.append(post)
+                }
             }
         } catch {
             print("error")
