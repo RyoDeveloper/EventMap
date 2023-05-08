@@ -19,7 +19,7 @@ struct PostComposeView: View {
 
     var body: some View {
         List {
-            TextField("タイトル(オプション)", text: $viewModel.title)
+            TextField("タイトル", text: $viewModel.title)
 
             if let image = viewModel.image {
                 VStack {
@@ -55,7 +55,7 @@ struct PostComposeView: View {
                     }
                     dismiss()
                 }
-                .disabled(viewModel.image == nil)
+                .disabled(viewModel.image == nil || viewModel.title.isEmpty)
             }
         }
         .navigationTitle("イベントを投稿")
