@@ -14,6 +14,7 @@
 		2A496A8E2A0638F100075840 /* UIImagePickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A496A8D2A0638F100075840 /* UIImagePickerView.swift */; };
 		2A5100282A0399D4009F6D19 /* AccountView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A5100272A0399D4009F6D19 /* AccountView.swift */; };
 		2A5CFE022A078EFC006BB7A5 /* PostViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A5CFE012A078EFC006BB7A5 /* PostViewModel.swift */; };
+		2A665B3C2A0CBB53002349A0 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 2A665B3B2A0CBB53002349A0 /* GoogleService-Info.plist */; };
 		2A68BBF829FE46EB00898B9D /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A68BBF729FE46EB00898B9D /* LoginView.swift */; };
 		2A68BBFA29FE471500898B9D /* AuthenticationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A68BBF929FE471500898B9D /* AuthenticationViewModel.swift */; };
 		2A68BBFD29FE724900898B9D /* PostComposeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A68BBFC29FE724900898B9D /* PostComposeView.swift */; };
@@ -45,6 +46,7 @@
 		2A496A8D2A0638F100075840 /* UIImagePickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIImagePickerView.swift; sourceTree = "<group>"; };
 		2A5100272A0399D4009F6D19 /* AccountView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountView.swift; sourceTree = "<group>"; };
 		2A5CFE012A078EFC006BB7A5 /* PostViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostViewModel.swift; sourceTree = "<group>"; };
+		2A665B3B2A0CBB53002349A0 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../../Downloads/GoogleService-Info.plist"; sourceTree = "<group>"; };
 		2A68BBF729FE46EB00898B9D /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
 		2A68BBF929FE471500898B9D /* AuthenticationViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticationViewModel.swift; sourceTree = "<group>"; };
 		2A68BBFC29FE724900898B9D /* PostComposeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostComposeView.swift; sourceTree = "<group>"; };
@@ -164,6 +166,7 @@
 				2AF38E8C2A04B186001F62C5 /* Account */,
 				2AF38E8B2A04B0F9001F62C5 /* Home */,
 				2AF5046A29FD554A00A30D9D /* Assets.xcassets */,
+				2A665B3B2A0CBB53002349A0 /* GoogleService-Info.plist */,
 				2AF5046C29FD554A00A30D9D /* Preview Content */,
 			);
 			path = EventMap;
@@ -254,6 +257,7 @@
 			files = (
 				2AF5046E29FD554A00A30D9D /* Preview Assets.xcassets in Resources */,
 				2AF5046B29FD554A00A30D9D /* Assets.xcassets in Resources */,
+				2A665B3C2A0CBB53002349A0 /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
