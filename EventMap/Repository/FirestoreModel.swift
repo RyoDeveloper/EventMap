@@ -19,7 +19,7 @@ class FirestoreModel {
     func post(post: Post) async {
         let db = Firestore.firestore()
         do {
-            try await db.collection("posts").document(post.document_id).setData([
+            try await db.collection("posts").document(post.id).setData([
                 "user_id": post.user_id,
                 "title": post.title,
                 "image_url": post.image_url.absoluteString,

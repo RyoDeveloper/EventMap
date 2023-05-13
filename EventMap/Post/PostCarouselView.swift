@@ -34,7 +34,7 @@ struct PostCarouselView: View {
                             }
                         }
                     }
-                    .tag(post.document_id)
+                    .tag(post.id)
             }
         }
         .animation(.default, value: selectedPost)

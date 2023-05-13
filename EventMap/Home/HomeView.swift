@@ -23,7 +23,7 @@ struct HomeView: View {
         }
         .task {
             await viewModel.get()
-            selectedPost = viewModel.posts.first?.document_id ?? ""
+            selectedPost = viewModel.posts.first?.id ?? ""
         }
     }
 }

@@ -12,10 +12,7 @@ import Foundation
 import SwiftUI
 
 struct Post: Hashable, Identifiable {
-    // mapのannotationに表示するために必要(document_idと統合させることも検討)
-    var id = UUID()
-
-    var document_id = UUID().uuidString
+    var id = UUID().uuidString
     var user_id: String
     var title: String
     var image_url: URL
