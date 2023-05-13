@@ -41,6 +41,16 @@ struct MapView: View {
                 }
             }
         }
+        .alert("位置情報が無効です", isPresented: .constant(!viewModel.locationManager.checkAuthorizationStatus())) {
+            Button("設定を開く") {
+                UIApplication.shared.open(URL(string: UIApplication.openSettingsURLString)!)
+            }
+        } message: {
+            Text("""
+            アプリをを使用するには、位置情報の使用を許可する必要があります。
+            設定アプリで位置情報を有効にしてください。
+            """)
+        }
         .onAppear {
             viewModel.activate()
         }

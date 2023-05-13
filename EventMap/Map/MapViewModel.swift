@@ -11,12 +11,12 @@ import CoreLocation
 import Foundation
 
 class MapViewModel: ObservableObject {
-    let model = LocationManager()
+    let locationManager = LocationManager()
     var cancellables = Set<AnyCancellable>()
     @Published var location = CLLocationCoordinate2D(latitude: 0.0, longitude: 0.0)
 
     func activate() {
-        model.locationPublisher().sink { [weak self] locations in
+        locationManager.locationPublisher().sink { [weak self] locations in
             guard let self = self else {
                 return
             }

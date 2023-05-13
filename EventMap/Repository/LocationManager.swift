@@ -24,6 +24,19 @@ class LocationManager: NSObject {
     func locationPublisher() -> AnyPublisher<[CLLocation], Never> {
         return locationSubject.eraseToAnyPublisher()
     }
+
+    /// 位置情報の取得許可を確認
+    func checkAuthorizationStatus() -> Bool {
+        let status = locationManager.authorizationStatus
+        switch status {
+        case .authorizedAlways, .authorizedWhenInUse:
+            return true
+        case .notDetermined, .restricted, .denied:
+            return false
+        @unknown default:
+            return false
+        }
+    }
 }
 
 extension LocationManager: CLLocationManagerDelegate {
