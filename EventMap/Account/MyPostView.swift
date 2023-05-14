@@ -14,13 +14,29 @@ struct MyPostView: View {
     let model = FirestoreModel()
 
     var body: some View {
-        List {
-            ForEach(viewModel.myPost, id: \.self) { post in
-                PostView(post: post)
-                    .cornerRadius(10)
+        Group {
+            if !viewModel.myPost.isEmpty {
+                List {
+                    ForEach(viewModel.myPost, id: \.self) { post in
+                        PostView(post: post)
+                            .cornerRadius(10)
+                    }
+                }
+                .listStyle(.plain)
+
+            } else {
+                VStack(spacing: 20) {
+                    Image(systemName: "camera")
+                        .font(.largeTitle)
+
+                    Text("投稿がありません。")
+                        .font(.headline)
+
+                    Text("左上の+ボタンから投稿してください。")
+                }
+                .frame(maxHeight: .infinity)
             }
         }
-        .listStyle(.plain)
         .task {
             await viewModel.getMyPost(user_id: authentication.user?.uid ?? "ユーザーなし")
         }

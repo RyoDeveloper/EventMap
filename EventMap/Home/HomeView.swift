@@ -10,20 +10,18 @@ import SwiftUI
 
 struct HomeView: View {
     @StateObject var viewModel = HomeViewModel()
-    @State var selectedPost = ""
 
     var body: some View {
         ZStack {
-            MapView(posts: $viewModel.posts, selectedPost: $selectedPost)
+            MapView(posts: $viewModel.posts, selectedPost: $viewModel.selectedPost)
             VStack {
                 Spacer()
-                PostCarouselView(posts: viewModel.posts, selectedPost: $selectedPost)
+                PostCarouselView(viewModel: viewModel, posts: viewModel.posts, selectedPost: $viewModel.selectedPost)
                     .padding(.bottom)
             }
         }
         .task {
             await viewModel.get()
-            selectedPost = viewModel.posts.first?.id ?? ""
         }
     }
 }
