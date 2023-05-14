@@ -1,5 +1,5 @@
 //
-//  AuthenticationViewModel.swift
+//  AuthenticationModel.swift
 //  EventMap
 //
 //  https://github.com/RyoDeveloper/EventMap
@@ -25,7 +25,7 @@ enum AuthenticationFlow {
 }
 
 @MainActor
-class AuthenticationViewModel: ObservableObject {
+class AuthenticationModel: ObservableObject {
     @Published var email = ""
     @Published var password = ""
     @Published var confirmPassword = ""
@@ -92,7 +92,7 @@ class AuthenticationViewModel: ObservableObject {
 
 // MARK: - Email and Password Authentication
 
-extension AuthenticationViewModel {
+extension AuthenticationModel {
     func signInWithEmailPassword() async -> Bool {
         authenticationState = .authenticating
         do {
@@ -145,7 +145,7 @@ extension AuthenticationViewModel {
 
 // MARK: Sign in with Apple
 
-extension AuthenticationViewModel {
+extension AuthenticationModel {
     func handleSignInWithAppleRequest(_ request: ASAuthorizationAppleIDRequest) {
         request.requestedScopes = [.fullName, .email]
         let nonce = randomNonceString()

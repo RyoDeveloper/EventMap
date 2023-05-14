@@ -37,16 +37,16 @@ class LocationManager: NSObject {
             return false
         }
     }
+
+    /// 現在地を取得の取得
+    var currentLocation: CLLocation? {
+        return locationManager.location
+    }
 }
 
 extension LocationManager: CLLocationManagerDelegate {
     // https://developer.apple.com/documentation/corelocation/cllocationmanagerdelegate/1423615-locationmanager
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
         locationSubject.send(locations)
-    }
-    
-    /// 現在地を取得の取得
-    var currentLocation: CLLocation? {
-        return locationManager.location
     }
 }

@@ -8,14 +8,14 @@
 
 import SwiftUI
 
-enum contentPage {
+enum ContentPage {
     case home
     case account
 }
 
 struct ContentView: View {
-    @EnvironmentObject var authentication: AuthenticationViewModel
-    @State var selection: contentPage = .home
+    @EnvironmentObject var authentication: AuthenticationModel
+    @State var selection: ContentPage = .home
     @State var isShowPostComposeView = false
 
     var body: some View {
@@ -25,26 +25,24 @@ struct ContentView: View {
                     .tabItem {
                         Label("ホーム", systemImage: "house.fill")
                     }
-                    .tag(contentPage.home)
-                NavigationStack {
-                    AccountView()
-                        .environmentObject(authentication)
+                    .tag(ContentPage.home)
+                AccountView()
+                    .environmentObject(authentication)
+                    .tabItem {
+                        Label("アカウント", systemImage: "person.fill")
+                    }
+                    .tag(ContentPage.account)
+            }
+            .toolbar {
+                ToolbarItem(placement: .navigationBarTrailing) {
+                    Button {
+                        isShowPostComposeView = true
+                    } label: {
+                        Label("投稿", systemImage: "plus")
+                    }
                 }
-                .tabItem {
-                    Label("アカウント", systemImage: "person.fill")
-                }
-                .tag(contentPage.account)
             }
         }
-        .toolbar(content: {
-            ToolbarItem(placement: .navigationBarTrailing) {
-                Button {
-                    isShowPostComposeView = true
-                } label: {
-                    Label("投稿", systemImage: "plus")
-                }
-            }
-        })
         .sheet(isPresented: $isShowPostComposeView) {
             NavigationStack {
                 PostComposeView()

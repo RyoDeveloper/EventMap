@@ -11,7 +11,7 @@ import PhotosUI
 import SwiftUI
 
 struct PostComposeView: View {
-    @EnvironmentObject var authentication: AuthenticationViewModel
+    @EnvironmentObject var authentication: AuthenticationModel
     @StateObject var viewModel = PostComposeViewModel()
     // Sheetのフラグ
     @Environment(\.dismiss) var dismiss

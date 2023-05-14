@@ -12,9 +12,8 @@ import SwiftUI
 
 struct PostView: View {
     var viewModel = PostViewModel()
-    var locationManager = LocationManager()
     let post: Post
-
+    
     var body: some View {
         HStack(alignment: .top) {
             AsyncImage(url: post.image_url) { Image in
@@ -27,14 +26,14 @@ struct PostView: View {
                 ProgressView()
                     .frame(width: UIScreen.main.bounds.height / 7, height: UIScreen.main.bounds.height / 7)
             }
-
+            
             VStack(alignment: .leading) {
                 Text(post.title)
                     .font(.headline)
                 
                 Spacer()
                 
-                Text(String(format: "%.1f", post.distance(from: locationManager.currentLocation?.coordinate ?? CLLocationCoordinate2D(latitude: 0.0, longitude: 0.0))) + "m")
+                Text(String(format: "%.1f", post.distance(from: viewModel.locationManager.currentLocation?.coordinate ?? CLLocationCoordinate2D(latitude: 0.0, longitude: 0.0))) + "m")
                 
                 Spacer()
                 

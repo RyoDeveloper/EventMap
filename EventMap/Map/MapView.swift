@@ -13,7 +13,7 @@ struct MapView: View {
     @StateObject var viewModel = MapViewModel()
     @Binding var posts: [Post]
     @Binding var selectedPost: String
-    
+
     var body: some View {
         VStack {
             Map(coordinateRegion: .constant(MKCoordinateRegion(
@@ -32,7 +32,7 @@ struct MapView: View {
                                 .font(post.id == selectedPost ? .largeTitle : .title)
                                 .foregroundColor(post.getHourColor())
                                 .shadow(radius: 5)
-                            
+
                             Image(systemName: "mappin")
                                 .font(post.id == selectedPost ? .title2 : .title3)
                                 .foregroundColor(Color(.systemBackground))

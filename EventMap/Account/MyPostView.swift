@@ -9,9 +9,8 @@
 import SwiftUI
 
 struct MyPostView: View {
-    @EnvironmentObject var authentication: AuthenticationViewModel
+    @EnvironmentObject var authentication: AuthenticationModel
     @StateObject var viewModel = MyPostViewModel()
-    let model = FirestoreModel()
 
     var body: some View {
         Group {
@@ -46,6 +45,6 @@ struct MyPostView: View {
 struct MyPostView_Previews: PreviewProvider {
     static var previews: some View {
         MyPostView()
-            .environmentObject(AuthenticationViewModel())
+            .environmentObject(AuthenticationModel())
     }
 }

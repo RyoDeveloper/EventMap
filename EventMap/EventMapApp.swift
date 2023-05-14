@@ -20,8 +20,8 @@ class AppDelegate: NSObject, UIApplicationDelegate {
 @main
 struct EventMapApp: App {
     @UIApplicationDelegateAdaptor(AppDelegate.self) var delegate
-    @StateObject var viewModel = AuthenticationViewModel()
-    
+    @StateObject var viewModel = AuthenticationModel()
+
     var body: some Scene {
         WindowGroup {
             NavigationStack {

@@ -10,7 +10,7 @@ import AuthenticationServices
 import SwiftUI
 
 struct LoginView: View {
-    @EnvironmentObject var viewModel: AuthenticationViewModel
+    @EnvironmentObject var viewModel: AuthenticationModel
     @Environment(\.colorScheme) var colorScheme
     
     var body: some View {
@@ -105,7 +105,7 @@ struct LoginView_Previews: PreviewProvider {
     static var previews: some View {
         NavigationStack {
             LoginView()
-                .environmentObject(AuthenticationViewModel())
+                .environmentObject(AuthenticationModel())
         }
     }
 }

@@ -9,11 +9,11 @@
 import Foundation
 
 class MyPostViewModel: ObservableObject {
-    let model = FirestoreModel()
+    let firestoreModel = FirestoreModel()
     @Published var myPost: [Post] = []
 
     @MainActor
     func getMyPost(user_id: String) async {
-        myPost = await model.get(user_id: user_id)
+        myPost = await firestoreModel.get(user_id: user_id)
     }
 }

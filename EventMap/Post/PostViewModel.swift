@@ -10,6 +10,8 @@ import FirebaseFirestore
 import Foundation
 
 class PostViewModel {
+    var locationManager = LocationManager()
+
     ///  MapのURLを作成
     func getMapURL(geopoint: GeoPoint, title: String) -> URL {
         let encodeString = title.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed)

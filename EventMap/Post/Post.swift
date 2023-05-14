@@ -23,7 +23,7 @@ struct Post: Hashable, Identifiable {
     func getCLLocationCoordinate2D() -> CLLocationCoordinate2D {
         return CLLocationCoordinate2D(latitude: geopoint.latitude, longitude: geopoint.longitude)
     }
-
+    
     /// 2点間の距離を返す(m)
     func distance(from: CLLocationCoordinate2D) -> CLLocationDistance {
         let from = CLLocation(latitude: from.latitude, longitude: from.longitude)
@@ -42,12 +42,12 @@ struct Post: Hashable, Identifiable {
         let decimalHour = round(hour * 10) / 10
         return decimalHour
     }
-
+    
     /// 経過時間から色を返す
     func getHourColor() -> Color {
         let second = created_at.dateValue().timeIntervalSinceNow
         let hour = second / 3600
-
+        
         if hour >= -1 {
             return .red
         } else if hour >= -6 {

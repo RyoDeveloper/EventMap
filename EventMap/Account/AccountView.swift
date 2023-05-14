@@ -8,14 +8,14 @@
 
 import SwiftUI
 
-enum accountPage {
+enum AccountPage {
     case post
     case setting
 }
 
 struct AccountView: View {
-    @EnvironmentObject var authentication: AuthenticationViewModel
-    @State var selection: accountPage = .post
+    @EnvironmentObject var authentication: AuthenticationModel
+    @State var selection: AccountPage = .post
 
     var body: some View {
         VStack {
@@ -27,9 +27,9 @@ struct AccountView: View {
 
                 Picker("", selection: $selection, content: {
                     Text("投稿")
-                        .tag(accountPage.post)
+                        .tag(AccountPage.post)
                     Text("設定")
-                        .tag(accountPage.setting)
+                        .tag(AccountPage.setting)
                 })
                 .pickerStyle(.segmented)
             }
@@ -48,6 +48,6 @@ struct AccountView: View {
 struct AccountView_Previews: PreviewProvider {
     static var previews: some View {
         AccountView()
-            .environmentObject(AuthenticationViewModel())
+            .environmentObject(AuthenticationModel())
     }
 }
