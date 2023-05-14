@@ -16,52 +16,54 @@ struct PostCarouselView: View {
     @Binding var selectedPost: String
 
     var body: some View {
-        Group {
-            if !posts.isEmpty {
-                TabView(selection: $selectedPost) {
-                    ForEach(posts, id: \.self) { post in
-                        PostView(post: post)
-                            .background {
-                                GeometryReader { geometry in
-                                    Path { _ in
-                                        let size = geometry.size.height
-                                        DispatchQueue.main.async {
-                                            if self.viewHeight != size {
-                                                self.viewHeight = size
-                                            }
+        if !posts.isEmpty {
+            TabView(selection: $selectedPost) {
+                ForEach(posts, id: \.self) { post in
+                    PostView(post: post)
+                        .background(.regularMaterial)
+                        .cornerRadius(10)
+                        .padding()
+                        .shadow(radius: 5)
+                        .background {
+                            GeometryReader { geometry in
+                                Path { _ in
+                                    let size = geometry.size.height
+                                    DispatchQueue.main.async {
+                                        if self.viewHeight != size {
+                                            self.viewHeight = size
                                         }
                                     }
                                 }
                             }
-                            .tag(post.id)
-                    }
-                }
-                .animation(.default, value: selectedPost)
-                .tabViewStyle(PageTabViewStyle(indexDisplayMode: .never))
-                .frame(height: viewHeight)
-            } else {
-                VStack(alignment: .leading) {
-                    Text("この場所には投稿がありません。")
-                        .font(.headline)
-
-                    Text("場所を変えて再更新してください。")
-
-                    Button("再更新する") {
-                        Task {
-                            await viewModel.get()
                         }
-                    }
-                    .buttonStyle(.borderedProminent)
-                    .frame(maxWidth: .infinity, alignment: .trailing)
+                        .tag(post.id)
                 }
-                .padding()
-                .frame(maxWidth: .infinity)
             }
+            .animation(.default, value: selectedPost)
+            .tabViewStyle(PageTabViewStyle(indexDisplayMode: .never))
+            .frame(height: viewHeight)
+        } else {
+            VStack(alignment: .leading) {
+                Text("この場所には投稿がありません。")
+                    .font(.headline)
+
+                Text("場所を変えて再更新してください。")
+
+                Button("再更新する") {
+                    Task {
+                        await viewModel.get()
+                    }
+                }
+                .buttonStyle(.borderedProminent)
+                .frame(maxWidth: .infinity, alignment: .trailing)
+            }
+            .padding()
+            .frame(maxWidth: .infinity)
+            .background(.regularMaterial)
+            .cornerRadius(10)
+            .padding()
+            .shadow(radius: 5)
         }
-        .background(.regularMaterial)
-        .cornerRadius(10)
-        .padding()
-        .shadow(radius: 5)
     }
 }
 
