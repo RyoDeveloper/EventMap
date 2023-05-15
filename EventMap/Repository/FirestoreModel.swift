@@ -40,7 +40,11 @@ final class FirestoreModel {
     func get(from: CLLocationCoordinate2D) async -> [Post] {
         var posts: [Post] = []
         do {
-            let querySnapshot = try await db.collection("posts").getDocuments()
+            let querySnapshot = try await db.collection("posts")
+                .whereField("created_at", isGreaterThanOrEqualTo: Timestamp(date: Date().addingTimeInterval(-60 * 60 * 24)))
+                // TODO: 160m以内の投稿を取得するようにする
+                .getDocuments()
+            
             for document in querySnapshot.documents {
                 let data = document.data()
                 let post = Post(user_id: data["user_id"] as? String ?? "",
@@ -55,6 +59,8 @@ final class FirestoreModel {
         } catch {
             print("error")
         }
+        // 距離順に並び替える
+        posts.sort { $0.distance(from: from) < $1.distance(from: from) }
         return posts
     }
     
@@ -76,6 +82,8 @@ final class FirestoreModel {
         } catch {
             print("error")
         }
+        // 投稿日順に並び替える
+        posts.sort { $0.created_at.dateValue() > $1.created_at.dateValue() }
         return posts
     }
     
