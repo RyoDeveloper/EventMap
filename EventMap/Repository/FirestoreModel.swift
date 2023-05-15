@@ -12,12 +12,17 @@ import FirebaseStorage
 import Foundation
 import UIKit
 
-class FirestoreModel {
+final class FirestoreModel {
+    // シングルトン
+    public static let shared = FirestoreModel()
+    private init() {}
+    private let db = Firestore.firestore()
+    private let storage = Storage.storage()
+    
     // MARK: Firestore
     
     /// 投稿
     func post(post: Post) async {
-        let db = Firestore.firestore()
         do {
             try await db.collection("posts").document(post.id).setData([
                 "user_id": post.user_id,
@@ -35,7 +40,7 @@ class FirestoreModel {
     func get(from: CLLocationCoordinate2D) async -> [Post] {
         var posts: [Post] = []
         do {
-            let querySnapshot = try await Firestore.firestore().collection("posts").getDocuments()
+            let querySnapshot = try await db.collection("posts").getDocuments()
             for document in querySnapshot.documents {
                 let data = document.data()
                 let post = Post(user_id: data["user_id"] as? String ?? "",
@@ -57,7 +62,7 @@ class FirestoreModel {
     func get(user_id: String) async -> [Post] {
         var posts: [Post] = []
         do {
-            let querySnapshot = try await Firestore.firestore().collection("posts")
+            let querySnapshot = try await db.collection("posts")
                 .whereField("user_id", isEqualTo: user_id).getDocuments()
             for document in querySnapshot.documents {
                 let data = document.data()
@@ -78,7 +83,6 @@ class FirestoreModel {
     
     /// 画像をアップロード
     func uploadImage(image: UIImage) -> URL {
-        let storage = Storage.storage()
         let storageRef = storage.reference()
         // 画像の情報
         let imageRef = storageRef.child("post/\(UUID().uuidString).jpg")

@@ -9,7 +9,7 @@
 import Foundation
 
 class HomeViewModel: ObservableObject {
-    private var firestoreModel = FirestoreModel()
+    private var firestoreModel = FirestoreModel.shared
     private var locationManager = LocationManager()
     @Published var posts: [Post] = []
     @Published var selectedPost = ""

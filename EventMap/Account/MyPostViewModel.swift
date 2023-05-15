@@ -9,7 +9,7 @@
 import Foundation
 
 class MyPostViewModel: ObservableObject {
-    private let firestoreModel = FirestoreModel()
+    private let firestoreModel = FirestoreModel.shared
     @Published var myPost: [Post] = []
 
     @MainActor
