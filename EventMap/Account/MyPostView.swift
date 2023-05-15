@@ -10,7 +10,7 @@ import SwiftUI
 
 struct MyPostView: View {
     @EnvironmentObject var authentication: AuthenticationModel
-    @StateObject var viewModel = MyPostViewModel()
+    @StateObject private var viewModel = MyPostViewModel()
 
     var body: some View {
         Group {

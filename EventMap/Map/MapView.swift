@@ -10,7 +10,7 @@ import MapKit
 import SwiftUI
 
 struct MapView: View {
-    @StateObject var viewModel = MapViewModel()
+    @StateObject private var viewModel = MapViewModel()
     @Binding var posts: [Post]
     @Binding var selectedPost: String
 

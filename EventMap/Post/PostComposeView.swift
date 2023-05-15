@@ -12,10 +12,10 @@ import SwiftUI
 
 struct PostComposeView: View {
     @EnvironmentObject var authentication: AuthenticationModel
-    @StateObject var viewModel = PostComposeViewModel()
+    @StateObject private var viewModel = PostComposeViewModel()
     // Sheetのフラグ
     @Environment(\.dismiss) var dismiss
-    @State var isShowImagePicker = true
+    @State private var isShowImagePicker = true
 
     var body: some View {
         List {

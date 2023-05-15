@@ -11,8 +11,8 @@ import Foundation
 import UIKit
 
 class PostComposeViewModel: ObservableObject {
-    var firestoreModel = FirestoreModel()
-    var locationManager = LocationManager()
+    private var firestoreModel = FirestoreModel()
+    private var locationManager = LocationManager()
     @Published var title = ""
     @Published var image: UIImage?
 

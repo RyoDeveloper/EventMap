@@ -15,8 +15,8 @@ enum ContentPage {
 
 struct ContentView: View {
     @EnvironmentObject var authentication: AuthenticationModel
-    @State var selection: ContentPage = .home
-    @State var isShowPostComposeView = false
+    @State private var selection: ContentPage = .home
+    @State private var isShowPostComposeView = false
 
     var body: some View {
         NavigationStack {
