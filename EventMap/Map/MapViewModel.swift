@@ -11,7 +11,7 @@ import CoreLocation
 import Foundation
 
 class MapViewModel: ObservableObject {
-    let locationManager = LocationManager()
+    let locationManager = LocationManager.shared
     var cancellables = Set<AnyCancellable>()
     @Published var location = CLLocationCoordinate2D(latitude: 0.0, longitude: 0.0)
 

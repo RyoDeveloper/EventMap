@@ -10,11 +10,13 @@ import Combine
 import CoreLocation
 import Foundation
 
-class LocationManager: NSObject {
-    let locationManager = CLLocationManager()
-    let locationSubject = PassthroughSubject<[CLLocation], Never>()
+final class LocationManager: NSObject {
+    // シングルトン
+    public static let shared = LocationManager()
+    private let locationManager = CLLocationManager()
+    private let locationSubject = PassthroughSubject<[CLLocation], Never>()
 
-    override init() {
+    override private init() {
         super.init()
         locationManager.delegate = self
         locationManager.requestWhenInUseAuthorization()

@@ -10,7 +10,7 @@ import FirebaseFirestore
 import Foundation
 
 class PostViewModel {
-    var locationManager = LocationManager()
+    var locationManager = LocationManager.shared
 
     ///  MapのURLを作成
     func getMapURL(geopoint: GeoPoint, title: String) -> URL {

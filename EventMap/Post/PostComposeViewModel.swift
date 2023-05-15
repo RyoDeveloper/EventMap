@@ -12,7 +12,7 @@ import UIKit
 
 class PostComposeViewModel: ObservableObject {
     private var firestoreModel = FirestoreModel.shared
-    private var locationManager = LocationManager()
+    private var locationManager = LocationManager.shared
     @Published var title = ""
     @Published var image: UIImage?
 
