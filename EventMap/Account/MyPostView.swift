@@ -16,7 +16,7 @@ struct MyPostView: View {
         Group {
             if !viewModel.myPost.isEmpty {
                 List {
-                    ForEach(viewModel.myPost, id: \.self) { post in
+                    ForEach(viewModel.myPost, id: \.id) { post in
                         PostView(post: post)
                             .cornerRadius(10)
                     }

@@ -24,6 +24,6 @@ class PostComposeViewModel: ObservableObject {
         guard let location = locationManager.currentLocation?.coordinate else {
             return
         }
-        await firestoreModel.post(post: Post(user_id: user_id, title: title, image_url: imageURL, geopoint: GeoPoint(latitude: location.latitude, longitude: location.longitude), created_at: Timestamp(date: Date())))
+        await firestoreModel.post(post: Post(user_id: user_id, title: title, image_url: imageURL, geopoint: GeoPoint(latitude: location.latitude, longitude: location.longitude), created_at: Timestamp(date: Date()), updated_at: Timestamp(date: Date())))
     }
 }

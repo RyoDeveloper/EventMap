@@ -12,12 +12,13 @@ import Foundation
 import SwiftUI
 
 struct Post: Hashable, Identifiable {
-    var id = UUID().uuidString
+    var id: String = UUID().uuidString
     var user_id: String
     var title: String
     var image_url: URL
     var geopoint: GeoPoint
     var created_at: Timestamp
+    var updated_at: Timestamp
     
     /// GeoPointをCLLocationCoordinate2Dに変換して返す
     func getCLLocationCoordinate2D() -> CLLocationCoordinate2D {
@@ -35,7 +36,7 @@ struct Post: Hashable, Identifiable {
     
     /// 経過時間を返す
     func getHour() -> Double {
-        let second = created_at.dateValue().timeIntervalSinceNow
+        let second = updated_at.dateValue().timeIntervalSinceNow
         var hour = second / 3600
         // 経過時間を求めたいため符号を反転
         hour *= -1
@@ -45,7 +46,7 @@ struct Post: Hashable, Identifiable {
     
     /// 経過時間から色を返す
     func getHourColor() -> Color {
-        let second = created_at.dateValue().timeIntervalSinceNow
+        let second = updated_at.dateValue().timeIntervalSinceNow
         let hour = second / 3600
         
         if hour >= -1 {

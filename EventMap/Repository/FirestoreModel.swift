@@ -29,7 +29,8 @@ final class FirestoreModel {
                 "title": post.title,
                 "image_url": post.image_url.absoluteString,
                 "geopoint": post.geopoint,
-                "created_at": post.created_at
+                "created_at": post.created_at,
+                "updated_at": post.updated_at
             ])
         } catch {
             print(error)
@@ -47,11 +48,13 @@ final class FirestoreModel {
             
             for document in querySnapshot.documents {
                 let data = document.data()
-                let post = Post(user_id: data["user_id"] as? String ?? "",
+                let post = Post(id: document.documentID,
+                                user_id: data["user_id"] as? String ?? "",
                                 title: data["title"] as? String ?? "",
                                 image_url: URL(string: data["image_url"] as! String) ?? URL(string: "NoImage")!,
                                 geopoint: data["geopoint"] as? GeoPoint ?? GeoPoint(latitude: 0.0, longitude: 0.0),
-                                created_at: data["created_at"] as? Timestamp ?? Timestamp(date: Date()))
+                                created_at: data["created_at"] as? Timestamp ?? Timestamp(date: Date()),
+                                updated_at: data["updated_at"] as? Timestamp ?? Timestamp(date: Date()))
                 if post.distance(from: from) < 160 {
                     posts.append(post)
                 }
@@ -72,11 +75,13 @@ final class FirestoreModel {
                 .whereField("user_id", isEqualTo: user_id).getDocuments()
             for document in querySnapshot.documents {
                 let data = document.data()
-                let post = Post(user_id: data["user_id"] as? String ?? "",
+                let post = Post(id: document.documentID,
+                                user_id: data["user_id"] as? String ?? "",
                                 title: data["title"] as? String ?? "",
                                 image_url: URL(string: data["image_url"] as! String) ?? URL(string: "NoImage")!,
                                 geopoint: data["geopoint"] as? GeoPoint ?? GeoPoint(latitude: 0.0, longitude: 0.0),
-                                created_at: data["created_at"] as? Timestamp ?? Timestamp(date: Date()))
+                                created_at: data["created_at"] as? Timestamp ?? Timestamp(date: Date()),
+                                updated_at: data["updated_at"] as? Timestamp ?? Timestamp(date: Date()))
                 posts.append(post)
             }
         } catch {
@@ -85,6 +90,15 @@ final class FirestoreModel {
         // 投稿日順に並び替える
         posts.sort { $0.created_at.dateValue() > $1.created_at.dateValue() }
         return posts
+    }
+    
+    /// updated_atを更新
+    func updateUpdatedAt(post: Post) async {
+        do {
+            try await db.collection("posts").document(post.id).updateData(["updated_at": Timestamp(date: Date())])
+        } catch {
+            print(error)
+        }
     }
     
     // MARK: Firestorage

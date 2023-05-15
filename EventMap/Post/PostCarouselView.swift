@@ -18,7 +18,7 @@ struct PostCarouselView: View {
     var body: some View {
         if !posts.isEmpty {
             TabView(selection: $selectedPost) {
-                ForEach(posts, id: \.self) { post in
+                ForEach(posts, id: \.id) { post in
                     PostView(post: post)
                         .background(.regularMaterial)
                         .cornerRadius(10)
@@ -37,6 +37,15 @@ struct PostCarouselView: View {
                             }
                         }
                         .tag(post.id)
+                        .contextMenu {
+                            Button {
+                                Task {
+                                    await viewModel.updateUpdatedAt(post: post)
+                                }
+                            } label: {
+                                Label("今も開催中", systemImage: "clock")
+                            }
+                        }
                 }
             }
             .animation(.default, value: selectedPost)
@@ -69,6 +78,6 @@ struct PostCarouselView: View {
 
 struct PostCarouselView_Previews: PreviewProvider {
     static var previews: some View {
-        PostCarouselView(viewModel: HomeViewModel(), posts: [Post(user_id: "1", title: "Title1", image_url: URL(string: "NoImage")!, geopoint: GeoPoint(latitude: 0.0, longitude: 0.0), created_at: Timestamp(date: Date())), Post(user_id: "2", title: "Title2", image_url: URL(string: "NoImage")!, geopoint: GeoPoint(latitude: 0.0, longitude: 0.0), created_at: Timestamp(date: Date()))], selectedPost: .constant(""))
+        PostCarouselView(viewModel: HomeViewModel(), posts: [Post(user_id: "1", title: "Title1", image_url: URL(string: "NoImage")!, geopoint: GeoPoint(latitude: 0.0, longitude: 0.0), created_at: Timestamp(date: Date()), updated_at: Timestamp(date: Date())), Post(user_id: "2", title: "Title2", image_url: URL(string: "NoImage")!, geopoint: GeoPoint(latitude: 0.0, longitude: 0.0), created_at: Timestamp(date: Date()), updated_at: Timestamp(date: Date()))], selectedPost: .constant(""))
     }
 }
