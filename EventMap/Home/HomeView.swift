@@ -23,6 +23,10 @@ struct HomeView: View {
         .task {
             await viewModel.get()
         }
+        .onChange(of: viewModel.selectedPost) { _ in
+            // Haptic feedback
+            UINotificationFeedbackGenerator().notificationOccurred(.success)
+        }
     }
 }
 

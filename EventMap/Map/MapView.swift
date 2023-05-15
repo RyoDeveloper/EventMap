@@ -27,16 +27,18 @@ struct MapView: View {
                     Button {
                         selectedPost = post.id
                     } label: {
-                        ZStack {
-                            Image(systemName: post.id == selectedPost ? "seal.fill" : "circle.fill")
-                                .font(post.id == selectedPost ? .largeTitle : .title)
-                                .foregroundColor(post.getHourColor())
-                                .shadow(radius: 5)
-
+                        Gauge(value: post.getHour() / 24) {
                             Image(systemName: "mappin")
-                                .font(post.id == selectedPost ? .title2 : .title3)
-                                .foregroundColor(Color(.systemBackground))
                         }
+                        .gaugeStyle(.accessoryCircularCapacity)
+                        .tint(post.getHourColor())
+                        .background {
+                            Circle()
+                                .fill(.regularMaterial)
+                                .shadow(radius: 5)
+                        }
+                        .scaleEffect(post.id == selectedPost ? 0.7 : 0.5)
+                        .animation(.default, value: selectedPost)
                     }
                 }
             }
