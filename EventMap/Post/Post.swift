@@ -25,8 +25,8 @@ struct Post: Hashable, Identifiable {
     }
     
     /// 2点間の距離を返す(m)
-    func distance(from: CLLocationCoordinate2D) -> CLLocationDistance {
-        let from = CLLocation(latitude: from.latitude, longitude: from.longitude)
+    func distance(from coordinate: CLLocationCoordinate2D) -> CLLocationDistance {
+        let from = CLLocation(latitude: coordinate.latitude, longitude: coordinate.longitude)
         let to = CLLocation(latitude: locationCoordinate2D.latitude, longitude: locationCoordinate2D.longitude)
         let distance = from.distance(from: to)
         let decimalLocation = round(distance * 10) / 10
