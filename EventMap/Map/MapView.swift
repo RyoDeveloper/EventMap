@@ -23,7 +23,7 @@ struct MapView: View {
             interactionModes: [],
             showsUserLocation: true,
             annotationItems: posts) { post in
-                MapAnnotation(coordinate: post.getCLLocationCoordinate2D()) {
+                MapAnnotation(coordinate: post.locationCoordinate2D) {
                     Button {
                         selectedPost = post.id
                     } label: {

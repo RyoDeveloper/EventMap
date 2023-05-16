@@ -19,16 +19,15 @@ struct Post: Hashable, Identifiable {
     var geopoint: GeoPoint
     var created_at: Timestamp
     var updated_at: Timestamp
-    
     /// GeoPointをCLLocationCoordinate2Dに変換して返す
-    func getCLLocationCoordinate2D() -> CLLocationCoordinate2D {
+    var locationCoordinate2D: CLLocationCoordinate2D {
         return CLLocationCoordinate2D(latitude: geopoint.latitude, longitude: geopoint.longitude)
     }
     
     /// 2点間の距離を返す(m)
     func distance(from: CLLocationCoordinate2D) -> CLLocationDistance {
         let from = CLLocation(latitude: from.latitude, longitude: from.longitude)
-        let to = CLLocation(latitude: getCLLocationCoordinate2D().latitude, longitude: getCLLocationCoordinate2D().longitude)
+        let to = CLLocation(latitude: locationCoordinate2D.latitude, longitude: locationCoordinate2D.longitude)
         let distance = from.distance(from: to)
         let decimalLocation = round(distance * 10) / 10
         return decimalLocation
