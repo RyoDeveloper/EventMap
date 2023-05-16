@@ -7,11 +7,18 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2A0DB8212A137722000A5E90 /* EventMapTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A0DB8202A137722000A5E90 /* EventMapTests.swift */; };
+		2A0DB8282A137750000A5E90 /* PostViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A0DB8272A137750000A5E90 /* PostViewModelTests.swift */; };
 		2A2649372A01E4FC00B3FECA /* LocationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A2649362A01E4FC00B3FECA /* LocationManager.swift */; };
 		2A496A882A04D6FE00075840 /* MyPostView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A496A872A04D6FE00075840 /* MyPostView.swift */; };
 		2A496A8A2A04DD7A00075840 /* MyPostViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A496A892A04DD7A00075840 /* MyPostViewModel.swift */; };
 		2A496A8C2A05E58E00075840 /* FirebaseStorage in Frameworks */ = {isa = PBXBuildFile; productRef = 2A496A8B2A05E58E00075840 /* FirebaseStorage */; };
 		2A496A8E2A0638F100075840 /* UIImagePickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A496A8D2A0638F100075840 /* UIImagePickerView.swift */; };
+		2A4DCE862A1378B700321793 /* FirebaseAppCheck in Frameworks */ = {isa = PBXBuildFile; productRef = 2A4DCE852A1378B700321793 /* FirebaseAppCheck */; };
+		2A4DCE882A1378C100321793 /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = 2A4DCE872A1378C100321793 /* FirebaseAuth */; };
+		2A4DCE8A2A1378CE00321793 /* FirebaseFirestore in Frameworks */ = {isa = PBXBuildFile; productRef = 2A4DCE892A1378CE00321793 /* FirebaseFirestore */; };
+		2A4DCE8C2A1378D400321793 /* FirebaseStorage in Frameworks */ = {isa = PBXBuildFile; productRef = 2A4DCE8B2A1378D400321793 /* FirebaseStorage */; };
+		2A4DCE8E2A13C41F00321793 /* PostTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A4DCE8D2A13C41F00321793 /* PostTests.swift */; };
 		2A5100282A0399D4009F6D19 /* AccountView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A5100272A0399D4009F6D19 /* AccountView.swift */; };
 		2A5CFE022A078EFC006BB7A5 /* PostViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A5CFE012A078EFC006BB7A5 /* PostViewModel.swift */; };
 		2A665B3C2A0CBB53002349A0 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 2A665B3B2A0CBB53002349A0 /* GoogleService-Info.plist */; };
@@ -39,12 +46,26 @@
 		2AF5049729FD6AC200A30D9D /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = 2AF5049629FD6AC200A30D9D /* FirebaseAuth */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXContainerItemProxy section */
+		2A0DB8222A137722000A5E90 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 2AF5045B29FD554900A30D9D /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 2AF5046229FD554900A30D9D;
+			remoteInfo = EventMap;
+		};
+/* End PBXContainerItemProxy section */
+
 /* Begin PBXFileReference section */
+		2A0DB81E2A137722000A5E90 /* EventMapTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = EventMapTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		2A0DB8202A137722000A5E90 /* EventMapTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventMapTests.swift; sourceTree = "<group>"; };
+		2A0DB8272A137750000A5E90 /* PostViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostViewModelTests.swift; sourceTree = "<group>"; };
 		2A2649362A01E4FC00B3FECA /* LocationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationManager.swift; sourceTree = "<group>"; };
 		2A3C76D329FD6C6E00912FB9 /* EventMap.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = EventMap.entitlements; sourceTree = "<group>"; };
 		2A496A872A04D6FE00075840 /* MyPostView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyPostView.swift; sourceTree = "<group>"; };
 		2A496A892A04DD7A00075840 /* MyPostViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyPostViewModel.swift; sourceTree = "<group>"; };
 		2A496A8D2A0638F100075840 /* UIImagePickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIImagePickerView.swift; sourceTree = "<group>"; };
+		2A4DCE8D2A13C41F00321793 /* PostTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostTests.swift; sourceTree = "<group>"; };
 		2A5100272A0399D4009F6D19 /* AccountView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountView.swift; sourceTree = "<group>"; };
 		2A5CFE012A078EFC006BB7A5 /* PostViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostViewModel.swift; sourceTree = "<group>"; };
 		2A665B3B2A0CBB53002349A0 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../../Downloads/GoogleService-Info.plist"; sourceTree = "<group>"; };
@@ -70,6 +91,17 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		2A0DB81B2A137722000A5E90 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2A4DCE862A1378B700321793 /* FirebaseAppCheck in Frameworks */,
+				2A4DCE8C2A1378D400321793 /* FirebaseStorage in Frameworks */,
+				2A4DCE882A1378C100321793 /* FirebaseAuth in Frameworks */,
+				2A4DCE8A2A1378CE00321793 /* FirebaseFirestore in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		2AF5046029FD554900A30D9D /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -85,6 +117,16 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		2A0DB81F2A137722000A5E90 /* EventMapTests */ = {
+			isa = PBXGroup;
+			children = (
+				2A0DB8202A137722000A5E90 /* EventMapTests.swift */,
+				2A0DB8272A137750000A5E90 /* PostViewModelTests.swift */,
+				2A4DCE8D2A13C41F00321793 /* PostTests.swift */,
+			);
+			path = EventMapTests;
+			sourceTree = "<group>";
+		};
 		2AF38E8B2A04B0F9001F62C5 /* Home */ = {
 			isa = PBXGroup;
 			children = (
@@ -144,6 +186,7 @@
 			isa = PBXGroup;
 			children = (
 				2AF5046529FD554900A30D9D /* EventMap */,
+				2A0DB81F2A137722000A5E90 /* EventMapTests */,
 				2AF5046429FD554900A30D9D /* Products */,
 				2AF5049529FD6AC200A30D9D /* Frameworks */,
 			);
@@ -153,6 +196,7 @@
 			isa = PBXGroup;
 			children = (
 				2AF5046329FD554900A30D9D /* EventMap.app */,
+				2A0DB81E2A137722000A5E90 /* EventMapTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -193,6 +237,30 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		2A0DB81D2A137722000A5E90 /* EventMapTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 2A0DB8262A137722000A5E90 /* Build configuration list for PBXNativeTarget "EventMapTests" */;
+			buildPhases = (
+				2A0DB81A2A137722000A5E90 /* Sources */,
+				2A0DB81B2A137722000A5E90 /* Frameworks */,
+				2A0DB81C2A137722000A5E90 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				2A0DB8232A137722000A5E90 /* PBXTargetDependency */,
+			);
+			name = EventMapTests;
+			packageProductDependencies = (
+				2A4DCE852A1378B700321793 /* FirebaseAppCheck */,
+				2A4DCE872A1378C100321793 /* FirebaseAuth */,
+				2A4DCE892A1378CE00321793 /* FirebaseFirestore */,
+				2A4DCE8B2A1378D400321793 /* FirebaseStorage */,
+			);
+			productName = EventMapTests;
+			productReference = 2A0DB81E2A137722000A5E90 /* EventMapTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 		2AF5046229FD554900A30D9D /* EventMap */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 2AF5047129FD554A00A30D9D /* Build configuration list for PBXNativeTarget "EventMap" */;
@@ -227,6 +295,10 @@
 				LastSwiftUpdateCheck = 1430;
 				LastUpgradeCheck = 1430;
 				TargetAttributes = {
+					2A0DB81D2A137722000A5E90 = {
+						CreatedOnToolsVersion = 14.3;
+						TestTargetID = 2AF5046229FD554900A30D9D;
+					};
 					2AF5046229FD554900A30D9D = {
 						CreatedOnToolsVersion = 14.3;
 					};
@@ -249,11 +321,19 @@
 			projectRoot = "";
 			targets = (
 				2AF5046229FD554900A30D9D /* EventMap */,
+				2A0DB81D2A137722000A5E90 /* EventMapTests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		2A0DB81C2A137722000A5E90 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		2AF5046129FD554900A30D9D /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -267,6 +347,16 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		2A0DB81A2A137722000A5E90 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2A0DB8282A137750000A5E90 /* PostViewModelTests.swift in Sources */,
+				2A0DB8212A137722000A5E90 /* EventMapTests.swift in Sources */,
+				2A4DCE8E2A13C41F00321793 /* PostTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		2AF5045F29FD554900A30D9D /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -298,7 +388,51 @@
 		};
 /* End PBXSourcesBuildPhase section */
 
+/* Begin PBXTargetDependency section */
+		2A0DB8232A137722000A5E90 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 2AF5046229FD554900A30D9D /* EventMap */;
+			targetProxy = 2A0DB8222A137722000A5E90 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
 /* Begin XCBuildConfiguration section */
+		2A0DB8242A137722000A5E90 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = BGS5U89ZQT;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = ryodeveloper.EventMapTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/EventMap.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/EventMap";
+			};
+			name = Debug;
+		};
+		2A0DB8252A137722000A5E90 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = BGS5U89ZQT;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = ryodeveloper.EventMapTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/EventMap.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/EventMap";
+			};
+			name = Release;
+		};
 		2AF5046F29FD554A00A30D9D /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -482,6 +616,15 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		2A0DB8262A137722000A5E90 /* Build configuration list for PBXNativeTarget "EventMapTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				2A0DB8242A137722000A5E90 /* Debug */,
+				2A0DB8252A137722000A5E90 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		2AF5045E29FD554900A30D9D /* Build configuration list for PBXProject "EventMap" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
@@ -515,6 +658,26 @@
 
 /* Begin XCSwiftPackageProductDependency section */
 		2A496A8B2A05E58E00075840 /* FirebaseStorage */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 2AF5047629FD63A300A30D9D /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseStorage;
+		};
+		2A4DCE852A1378B700321793 /* FirebaseAppCheck */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 2AF5047629FD63A300A30D9D /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseAppCheck;
+		};
+		2A4DCE872A1378C100321793 /* FirebaseAuth */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 2AF5047629FD63A300A30D9D /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseAuth;
+		};
+		2A4DCE892A1378CE00321793 /* FirebaseFirestore */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 2AF5047629FD63A300A30D9D /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseFirestore;
+		};
+		2A4DCE8B2A1378D400321793 /* FirebaseStorage */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 2AF5047629FD63A300A30D9D /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
 			productName = FirebaseStorage;

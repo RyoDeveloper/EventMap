@@ -42,7 +42,7 @@ final class FirestoreModel {
         var posts: [Post] = []
         do {
             let querySnapshot = try await db.collection("posts")
-                .whereField("created_at", isGreaterThanOrEqualTo: Timestamp(date: Date().addingTimeInterval(-60 * 60 * 24)))
+                .whereField("updated_at", isGreaterThanOrEqualTo: Timestamp(date: Date().addingTimeInterval(-60 * 60 * 24)))
                 // TODO: 160m以内の投稿を取得するようにする
                 .getDocuments()
             
