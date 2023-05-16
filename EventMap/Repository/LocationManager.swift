@@ -20,6 +20,8 @@ final class LocationManager: NSObject {
         super.init()
         locationManager.delegate = self
         locationManager.requestWhenInUseAuthorization()
+        // 5mごとに位置情報を取得
+        locationManager.distanceFilter = 5
         locationManager.startUpdatingLocation()
     }
 
