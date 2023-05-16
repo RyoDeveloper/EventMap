@@ -46,6 +46,7 @@ struct PostView: View {
                     let application = UIApplication.shared
                     let url = viewModel.getMapURL(geopoint: post.geopoint, title: post.title)
                     application.open(url)
+                    viewModel.scheduleNotification(distance: post.distance(from: viewModel.locationManager.currentLocation?.coordinate ?? CLLocationCoordinate2D(latitude: 0.0, longitude: 0.0)))
                 }
                 .buttonStyle(.borderedProminent)
                 .frame(maxWidth: .infinity, alignment: .trailing)

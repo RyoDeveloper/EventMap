@@ -26,6 +26,7 @@
 		2A83FE832A0252D600F583BA /* MapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A83FE822A0252D600F583BA /* MapView.swift */; };
 		2A8B271329FF79D1000A703C /* Post.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A8B271229FF79D1000A703C /* Post.swift */; };
 		2A8B271529FFBDD4000A703C /* FirestoreModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A8B271429FFBDD4000A703C /* FirestoreModel.swift */; };
+		2ACAFE0E2A1319D500586E5C /* NotificationModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2ACAFE0D2A1319D500586E5C /* NotificationModel.swift */; };
 		2AF38E862A039F30001F62C5 /* SettingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AF38E852A039F30001F62C5 /* SettingView.swift */; };
 		2AF38E882A03D419001F62C5 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AF38E872A03D419001F62C5 /* HomeView.swift */; };
 		2AF38E912A04C935001F62C5 /* PostView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AF38E902A04C935001F62C5 /* PostView.swift */; };
@@ -57,6 +58,7 @@
 		2A83FE822A0252D600F583BA /* MapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapView.swift; sourceTree = "<group>"; };
 		2A8B271229FF79D1000A703C /* Post.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Post.swift; sourceTree = "<group>"; };
 		2A8B271429FFBDD4000A703C /* FirestoreModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirestoreModel.swift; sourceTree = "<group>"; };
+		2ACAFE0D2A1319D500586E5C /* NotificationModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationModel.swift; sourceTree = "<group>"; };
 		2AF38E852A039F30001F62C5 /* SettingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingView.swift; sourceTree = "<group>"; };
 		2AF38E872A03D419001F62C5 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 		2AF38E902A04C935001F62C5 /* PostView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostView.swift; sourceTree = "<group>"; };
@@ -133,6 +135,7 @@
 				2A68BBF929FE471500898B9D /* AuthenticationModel.swift */,
 				2A8B271429FFBDD4000A703C /* FirestoreModel.swift */,
 				2A2649362A01E4FC00B3FECA /* LocationManager.swift */,
+				2ACAFE0D2A1319D500586E5C /* NotificationModel.swift */,
 			);
 			path = Repository;
 			sourceTree = "<group>";
@@ -288,6 +291,7 @@
 				2A5CFE022A078EFC006BB7A5 /* PostViewModel.swift in Sources */,
 				2AF5046729FD554900A30D9D /* EventMapApp.swift in Sources */,
 				2AF38E912A04C935001F62C5 /* PostView.swift in Sources */,
+				2ACAFE0E2A1319D500586E5C /* NotificationModel.swift in Sources */,
 				2A83FE812A022A9300F583BA /* MapViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
