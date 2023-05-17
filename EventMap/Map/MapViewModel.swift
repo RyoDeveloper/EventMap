@@ -13,7 +13,12 @@ import Foundation
 class MapViewModel: ObservableObject {
     let locationManager = LocationManager.shared
     var cancellables = Set<AnyCancellable>()
-    @Published var location = CLLocationCoordinate2D(latitude: 0.0, longitude: 0.0)
+    @Published var location: CLLocationCoordinate2D
+
+    init() {
+        // 初期値に現在地を設定
+        self.location = locationManager.currentLocation?.coordinate ?? CLLocationCoordinate2D(latitude: 0.0, longitude: 0.0)
+    }
 
     func activate() {
         locationManager.locationPublisher().sink { [weak self] locations in
