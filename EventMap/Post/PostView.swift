@@ -62,6 +62,6 @@ struct PostView: View {
 
 struct PostView_Previews: PreviewProvider {
     static var previews: some View {
-        PostView(post: Post(user_id: "1", title: "Title1", image_url: URL(string: "NoImage")!, geopoint: GeoPoint(latitude: 0.0, longitude: 0.0), created_at: Timestamp(date: Date()), updated_at: Timestamp(date: Date())))
+        PostView(post: Post(user_id: "1", title: "Title1", image_url: URL(string: "NoImage")!, category: Category.other, geopoint: GeoPoint(latitude: 0.0, longitude: 0.0), created_at: Timestamp(date: Date()), updated_at: Timestamp(date: Date())))
     }
 }

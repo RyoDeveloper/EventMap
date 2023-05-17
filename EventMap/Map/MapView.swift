@@ -28,7 +28,16 @@ struct MapView: View {
                         selectedPost = post.id
                     } label: {
                         Gauge(value: post.getHour() / 24) {
-                            Image(systemName: "mappin")
+                            switch post.category {
+                            case .food:
+                                Image(systemName: "takeoutbag.and.cup.and.straw.fill")
+                            case .event:
+                                Image(systemName: "tent.fill")
+                            case .observe:
+                                Image(systemName: "building.columns")
+                            case .other:
+                                Image(systemName: "ellipsis")
+                            }
                         }
                         .gaugeStyle(.accessoryCircularCapacity)
                         .tint(post.getHourColor())

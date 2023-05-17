@@ -78,6 +78,6 @@ struct PostCarouselView: View {
 
 struct PostCarouselView_Previews: PreviewProvider {
     static var previews: some View {
-        PostCarouselView(viewModel: HomeViewModel(), posts: [Post(user_id: "1", title: "Title1", image_url: URL(string: "NoImage")!, geopoint: GeoPoint(latitude: 0.0, longitude: 0.0), created_at: Timestamp(date: Date()), updated_at: Timestamp(date: Date())), Post(user_id: "2", title: "Title2", image_url: URL(string: "NoImage")!, geopoint: GeoPoint(latitude: 0.0, longitude: 0.0), created_at: Timestamp(date: Date()), updated_at: Timestamp(date: Date()))], selectedPost: .constant(""))
+        PostCarouselView(viewModel: HomeViewModel(), posts: [Post(user_id: "1", title: "Title1", image_url: URL(string: "NoImage")!, category: Category.other, geopoint: GeoPoint(latitude: 0.0, longitude: 0.0), created_at: Timestamp(date: Date()), updated_at: Timestamp(date: Date())), Post(user_id: "2", title: "Title2", image_url: URL(string: "NoImage")!, category: Category.other, geopoint: GeoPoint(latitude: 0.0, longitude: 0.0), created_at: Timestamp(date: Date()), updated_at: Timestamp(date: Date()))], selectedPost: .constant(""))
     }
 }

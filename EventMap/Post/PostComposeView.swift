@@ -18,26 +18,39 @@ struct PostComposeView: View {
     @State private var isShowImagePicker = true
 
     var body: some View {
-        List {
-            TextField("タイトル", text: $viewModel.title)
-                .submitLabel(.done)
+        VStack {
+            Picker("カテゴリー", selection: $viewModel.category) {
+                ForEach(Category.allCases, id: \.self) { category in
+                    Text(category.rawValue)
+                }
+            }
+            .pickerStyle(.segmented)
+            .padding([.top, .leading, .trailing])
 
-            if let image = viewModel.image {
-                VStack {
-                    Image(uiImage: image)
-                        .resizable()
-                        .aspectRatio(contentMode: .fit)
-                    Button("再撮影") {
+            Divider()
+
+            List {
+                TextField("タイトル", text: $viewModel.title)
+                    .submitLabel(.done)
+
+                if let image = viewModel.image {
+                    VStack {
+                        Image(uiImage: image)
+                            .resizable()
+                            .aspectRatio(contentMode: .fit)
+                        Button("再撮影") {
+                            isShowImagePicker = true
+                        }
+                        .buttonStyle(.borderless)
+                    }
+                } else {
+                    Button("写真撮影") {
                         isShowImagePicker = true
                     }
-                    .buttonStyle(.borderless)
-                }
-            } else {
-                Button("写真撮影") {
-                    isShowImagePicker = true
                 }
             }
         }
+        .background(Color(.systemGroupedBackground))
         .sheet(isPresented: $isShowImagePicker) {
             ImagePickerView(selectedImage: $viewModel.image)
                 .edgesIgnoringSafeArea(.all)

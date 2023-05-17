@@ -28,6 +28,7 @@ final class FirestoreModel {
                 "user_id": post.user_id,
                 "title": post.title,
                 "image_url": post.image_url.absoluteString,
+                "category": post.category.rawValue,
                 "geopoint": post.geopoint,
                 "created_at": post.created_at,
                 "updated_at": post.updated_at
@@ -52,6 +53,7 @@ final class FirestoreModel {
                                 user_id: data["user_id"] as? String ?? "",
                                 title: data["title"] as? String ?? "",
                                 image_url: URL(string: data["image_url"] as! String) ?? URL(string: "NoImage")!,
+                                category: Category(rawValue: data["category"] as? String ?? "NoCategory") ?? Category.other,
                                 geopoint: data["geopoint"] as? GeoPoint ?? GeoPoint(latitude: 0.0, longitude: 0.0),
                                 created_at: data["created_at"] as? Timestamp ?? Timestamp(date: Date()),
                                 updated_at: data["updated_at"] as? Timestamp ?? Timestamp(date: Date()))
@@ -79,6 +81,7 @@ final class FirestoreModel {
                                 user_id: data["user_id"] as? String ?? "",
                                 title: data["title"] as? String ?? "",
                                 image_url: URL(string: data["image_url"] as! String) ?? URL(string: "NoImage")!,
+                                category: Category(rawValue: data["category"] as? String ?? "NoCategory") ?? Category.other,
                                 geopoint: data["geopoint"] as? GeoPoint ?? GeoPoint(latitude: 0.0, longitude: 0.0),
                                 created_at: data["created_at"] as? Timestamp ?? Timestamp(date: Date()),
                                 updated_at: data["updated_at"] as? Timestamp ?? Timestamp(date: Date()))

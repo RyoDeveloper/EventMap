@@ -11,11 +11,23 @@ import FirebaseFirestore
 import Foundation
 import SwiftUI
 
+enum Category: String, CaseIterable, Hashable {
+    // 食べ物(キッチンカー, ~フェス 等)
+    case food = "食べ物"
+    // イベント(ワークショップ, 骨董市 等)
+    case event = "イベント"
+    // 見学(~展, お笑いライブ 等)
+    case observe = "見学"
+    
+    case other = "その他"
+}
+
 struct Post: Hashable, Identifiable {
     var id: String = UUID().uuidString
     var user_id: String
     var title: String
     var image_url: URL
+    var category: Category
     var geopoint: GeoPoint
     var created_at: Timestamp
     var updated_at: Timestamp
